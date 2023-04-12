@@ -84,7 +84,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.15.11":
+"@types/node@npm:^18.15.11":
   version: 18.15.11
   resolution: "@types/node@npm:18.15.11"
   checksum: 977b4ad04708897ff0eb049ecf82246d210939c82461922d20f7d2dcfd81bbc661582ba3af28869210f7e8b1934529dcd46bff7d448551400f9d48b9d3bddec3
@@ -107,7 +107,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:18.0.35":
+"@types/react@npm:*, @types/react@npm:^18.0.35":
   version: 18.0.35
   resolution: "@types/react@npm:18.0.35"
   dependencies:
@@ -177,13 +177,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "my-portfolio@workspace:."
   dependencies:
-    "@types/node": 18.15.11
-    "@types/react": 18.0.35
+    "@types/node": ^18.15.11
+    "@types/react": ^18.0.35
     "@types/react-dom": 18.0.11
     next: 13.3.0
     react: 18.2.0
     react-dom: 18.2.0
-    typescript: 5.0.4
+    typescript: ^5.0.4
   languageName: unknown
   linkType: soft
 
@@ -341,7 +341,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:5.0.4":
+"typescript@npm:^5.0.4":
   version: 5.0.4
   resolution: "typescript@npm:5.0.4"
   bin:
@@ -351,7 +351,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@5.0.4#~builtin<compat/typescript>":
+"typescript@patch:typescript@^5.0.4#~builtin<compat/typescript>":
   version: 5.0.4
   resolution: "typescript@patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=d73830"
   bin:
