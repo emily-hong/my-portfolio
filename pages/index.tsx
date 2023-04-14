@@ -17,7 +17,9 @@ export default function Home() {
       <main
       // className={styles.main}
       >
-        portfolio
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
       </main>
     </>
   );
