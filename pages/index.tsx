@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import styled from "@emotion/styled";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,13 +15,40 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main
+      <Main
       // className={styles.main}
       >
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-      </main>
+        <CustomSection>1</CustomSection>
+        <CustomSection className="second">2</CustomSection>
+        <CustomSection>3</CustomSection>
+      </Main>
     </>
   );
 }
+
+const Main = styled.div`
+  position: relative;
+  height: 100vh;
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+`;
+
+const CustomSection = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  scroll-snap-align: center;
+
+  font-family: sans-serif;
+  background: #fed0d1;
+  color: #f34a4e;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  &.second {
+    background: #f34a4e;
+    color: #fed0d1;
+  }
+`;
