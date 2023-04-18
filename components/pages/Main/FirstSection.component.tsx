@@ -2,7 +2,14 @@ import React from "react";
 import styled from "@emotion/styled";
 
 export default function FirstSection() {
-  return <CustomSection>FirstSection</CustomSection>;
+  return (
+    <CustomSection>
+      <ProfileName>
+        <p>Hi! I’m Hong Hyeonjeong - </p>
+        <p>Front-end Developer</p>
+      </ProfileName>
+    </CustomSection>
+  );
 }
 
 const CustomSection = styled.section`
@@ -22,5 +29,11 @@ const CustomSection = styled.section`
   &.second {
     background: #f34a4e;
     color: #fed0d1;
+  }
+`;
+const ProfileName = styled.div`
+  border: 1px solid red;
+  p {
+    margin: 0;
   }
 `;
