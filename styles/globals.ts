@@ -16,9 +16,10 @@ export const global = css`
   }
 
   * {
-    font-family: GmarketSans;
-    font-style: normal;
-    font-weight: normal;
+    /* font-family: GmarketSans; */
+    /* font-family: "Rubik Pixels", cursive; */
+    /* font-style: normal; */
+    /* font-weight: normal; */
     box-sizing: border-box;
   }
 `;
