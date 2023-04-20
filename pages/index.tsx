@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import styled from "@emotion/styled";
-import { FirstSection } from "@components/pages/Main";
+import { FirstSection, ForthSection } from "@components/pages/Main";
 import SecondSection from "@components/pages/Main/SecondSection.component";
 import ThirdSection from "@components/pages/Main/ThirdSection.component";
 
@@ -24,6 +24,7 @@ export default function Home() {
         <FirstSection />
         <SecondSection />
         <ThirdSection />
+        <ForthSection />
       </Main>
     </>
   );
@@ -31,8 +32,12 @@ export default function Home() {
 
 const Main = styled.div`
   position: relative;
+  width: 100%;
+  max-width: 1920px;
   height: 100vh;
   overflow: auto;
+  border: 1px solid black;
+
   &::-webkit-scrollbar {
     display: none;
   }

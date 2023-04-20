@@ -6,11 +6,13 @@ export default function FirstSection() {
   return (
     <CustomSection>
       <ProfileName>
-        <h1>Hi! I’m Hong Hyeonjeong - </h1>
-        <h1>Front-end Developer</h1>
+        <div>
+          <p>Hi! I’m Hong Hyeonjeong - </p>
+          <p>Front-end Developer</p>
+        </div>
       </ProfileName>
 
-      <ImageLeft>
+      {/* <ImageLeft>
         <div>
           <Image src="/images/circle.svg" fill alt="circle" />
         </div>
@@ -19,7 +21,7 @@ export default function FirstSection() {
         <div>
           <Image src="/images/circle.svg" fill alt="circle" />
         </div>
-      </ImageRight>
+      </ImageRight> */}
     </CustomSection>
   );
 }
@@ -29,30 +31,38 @@ const CustomSection = styled.section`
   justify-content: center;
   align-items: center;
   height: 100vh;
+  font-size: 5vw;
+  font-weight: bold;
+  font-family: "Apris Light";
+
+  background-color: #181818;
+
   scroll-snap-align: center;
-
-  /* font-family: sans-serif; */
-  /* text-transform: uppercase; */
-
-  letter-spacing: 0.1em;
-  font-size: 3.125rem;
-  font-family: "Nanum Pen Script", cursive;
-  color: #121212;
-  font-weight: 900;
-  background-color: #fff7ed;
 `;
 const ProfileName = styled.div`
   position: absolute;
   z-index: 1;
+
   p {
     margin: 0;
+    text-align: center;
+    line-height: 1.3;
+    color: #ffffff;
   }
 `;
 
 const ImageLeft = styled.div`
   position: absolute;
-  top: 20.8vw;
-  left: 10.41vw;
+  top: 25vw;
+  left: 10vw;
+  /* animation: rotate_image 6s linear infinite;
+  transform-origin: 50% 50%;
+
+  @keyframes rotate_image {
+    100% {
+      transform: rotate(360deg);
+    }
+  } */
 
   div {
     position: relative;
@@ -63,7 +73,7 @@ const ImageLeft = styled.div`
 const ImageRight = styled.div`
   position: absolute;
   top: 200px;
-  right: 300px;
+  right: 17vw;
 
   div {
     position: relative;
