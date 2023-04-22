@@ -3,9 +3,12 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import styled from "@emotion/styled";
-import { FirstSection, ForthSection } from "@components/pages/Main";
-import SecondSection from "@components/pages/Main/SecondSection.component";
-import ThirdSection from "@components/pages/Main/ThirdSection.component";
+import {
+  FirstSection,
+  SecondSection,
+  ThirdSection,
+  FourthSection,
+} from "@components/pages/Main";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +27,7 @@ export default function Home() {
         <FirstSection />
         <SecondSection />
         <ThirdSection />
-        <ForthSection />
+        <FourthSection />
       </Main>
     </>
   );
