@@ -5,33 +5,26 @@ import Image from "next/image";
 export default function FirstSection() {
   return (
     <CustomSection>
+      <Navbar>
+        <p>Introduce</p>
+        <p>Skills</p>
+        <p>Project</p>
+        <p>Contact</p>
+      </Navbar>
+
       <ProfileName>
-        <div>
+        {/* <div>
           <p>Hi! I’m Hong Hyeonjeong - </p>
           <p>Front-end Developer</p>
-        </div>
+        </div> */}
       </ProfileName>
-
-      {/* <ImageLeft>
-        <div>
-          <Image src="/images/circle.svg" fill alt="circle" />
-        </div>
-      </ImageLeft>
-      <ImageRight>
-        <div>
-          <Image src="/images/circle.svg" fill alt="circle" />
-        </div>
-      </ImageRight> */}
     </CustomSection>
   );
 }
 
 const CustomSection = styled.section`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
-  font-size: 5vw;
+
   font-weight: bold;
   font-family: "Apris Light";
 
@@ -39,6 +32,24 @@ const CustomSection = styled.section`
 
   scroll-snap-align: center;
 `;
+
+const Navbar = styled.section`
+  /* width: 100%; */
+  width: 50%;
+  margin: 0 auto;
+  font-size: 2.08vw;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2.6vw;
+
+  p {
+    margin: 0;
+
+    color: #ffffff;
+  }
+  border: 1px solid red;
+`;
+
 const ProfileName = styled.div`
   position: absolute;
   z-index: 1;

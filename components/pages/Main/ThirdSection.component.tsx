@@ -6,7 +6,7 @@ export default function ThirdSection() {
 }
 
 const CustomSection = styled.section`
-  /* display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -17,5 +17,5 @@ const CustomSection = styled.section`
   color: #ffffff;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 0.1em; */
+  letter-spacing: 0.1em;
 `;
