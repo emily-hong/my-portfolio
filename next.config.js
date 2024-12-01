@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
-    appDir: true,
+    styledComponents: true, // styled-components 지원 활성화
   },
 };
 
