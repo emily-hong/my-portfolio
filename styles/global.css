@@ -1,0 +1,37 @@
+/* global.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* 100vh가 제대로 작동하도록 설정 */
+  overflow-x: hidden;
+  overflow-y: auto; /* 세로 스크롤을 명시적으로 허용 */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
