@@ -43,12 +43,16 @@ const Main = () => {
     <Layout>
       {/* 전체 콘텐츠 */}
       {/* 첫 번째 페이지 */}
-      <FirstPage>첫 번째 페이지</FirstPage>
+      <FirstPage>{/* 프로필사진, 인삿말 */}첫 번째 페이지</FirstPage>
 
       {/* 두 번째 페이지 */}
+      {/* About Me : 자기소개, 깃허브, 블로그주소, 이메일 */}
+      {/* Carrer : 경력사항 */}
+      {/* Project : 작업했던 프로젝트 소개, 모달창 상세소개 */}
+      {/* Education : 개발 관련 교육 이수 내용 */}
       <AboutPage>
         <Sidebar>
-          {["Section 1", "Section 2", "Section 3"].map((section) => (
+          {["About Me", "Career", "Project", "Education"].map((section) => (
             <h1
               key={section}
               className={activeSection === section ? "active" : ""}
@@ -59,18 +63,20 @@ const Main = () => {
         </Sidebar>
 
         <Content>
-          {["Section 1", "Section 2", "Section 3"].map((section, index) => (
-            <Section
-              key={section}
-              data-section={section}
-              ref={(el) => {
-                sectionRefs.current[index] = el;
-              }}
-            >
-              <h2>{section}</h2>
-              <p>Content for {section} goes here.</p>
-            </Section>
-          ))}
+          {["About Me", "Career", "Project", "Education"].map(
+            (section, index) => (
+              <Section
+                key={section}
+                data-section={section}
+                ref={(el) => {
+                  sectionRefs.current[index] = el;
+                }}
+              >
+                <h2>{section}</h2>
+                <p>Content for {section} goes here.</p>
+              </Section>
+            )
+          )}
         </Content>
       </AboutPage>
     </Layout>
