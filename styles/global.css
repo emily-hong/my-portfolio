@@ -13,6 +13,20 @@ body {
   overflow-y: auto; /* 세로 스크롤을 명시적으로 허용 */
 }
 
+html {
+  font-size: 16px;
+}
+body {
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 2rem; /* 32px */
+}
+p {
+  font-size: 1rem; /* 16px */
+}
+
 a {
   text-decoration: none;
   color: inherit;

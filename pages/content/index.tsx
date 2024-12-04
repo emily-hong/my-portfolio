@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
+import { FirstPage } from "../../components/Pages/First/FirstPage";
+import AboutPage from "../../components/Pages/About/AboutPage";
 
 const Main = () => {
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -42,43 +44,9 @@ const Main = () => {
   return (
     <Layout>
       {/* 전체 콘텐츠 */}
-      {/* 첫 번째 페이지 */}
-      <FirstPage>{/* 프로필사진, 인삿말 */}첫 번째 페이지</FirstPage>
-
+      <FirstPage />
       {/* 두 번째 페이지 */}
-      {/* About Me : 자기소개, 깃허브, 블로그주소, 이메일 */}
-      {/* Carrer : 경력사항 */}
-      {/* Project : 작업했던 프로젝트 소개, 모달창 상세소개 */}
-      {/* Education : 개발 관련 교육 이수 내용 */}
-      <AboutPage>
-        <Sidebar>
-          {["About Me", "Career", "Project", "Education"].map((section) => (
-            <h1
-              key={section}
-              className={activeSection === section ? "active" : ""}
-            >
-              {section}
-            </h1>
-          ))}
-        </Sidebar>
-
-        <Content>
-          {["About Me", "Career", "Project", "Education"].map(
-            (section, index) => (
-              <Section
-                key={section}
-                data-section={section}
-                ref={(el) => {
-                  sectionRefs.current[index] = el;
-                }}
-              >
-                <h2>{section}</h2>
-                <p>Content for {section} goes here.</p>
-              </Section>
-            )
-          )}
-        </Content>
-      </AboutPage>
+      <AboutPage />
     </Layout>
   );
 };
@@ -87,85 +55,8 @@ const Main = () => {
 const Layout = styled.div`
   position: relative;
   width: 100%;
-  /* height: 100%; */
   /* overflow: hidden;  */
   /* 가로 스크롤 방지 */
-`;
-
-const FirstPage = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f4f4f4;
-  font-size: 2rem;
-  color: #333;
-
-  top: 0;
-  position: fixed;
-  z-index: -1;
-`;
-const AboutPage = styled.div`
-  display: flex;
-  margin-top: 100vh; /* 첫 번째 페이지 아래에서 시작 */
-  min-height: 100vh; /* 두 번째 페이지 최소 높이를 설정 */
-  background-color: #1c1c1c;
-  z-index: 5;
-  border: 2px solid red;
-`;
-
-const Sidebar = styled.div`
-  position: sticky;
-  top: 0; /* 스크롤 시 상단에 고정 */
-  height: 100vh; /* Sidebar의 높이를 화면 높이로 설정 */
-  width: 25%;
-  background-color: #1c1c1c;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  h1 {
-    font-size: 1.5rem;
-    margin: 1rem 0;
-    color: #666;
-    transition: color 0.3s ease;
-  }
-
-  h1:hover {
-    color: #fff;
-  }
-
-  h1.active {
-    color: red; /* 활성화된 섹션의 색상 */
-  }
-`;
-
-const Content = styled.div`
-  width: 75%; /* Sidebar 옆의 콘텐츠 영역 */
-  padding: 2rem;
-  background-color: #2e2e2e;
-`;
-
-const Section = styled.div`
-  height: 100vh;
-  margin-bottom: 2rem;
-  color: #fff;
-
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-
-  p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-  }
-
-  border: 2px solid blue;
 `;
 
 export default Main;
