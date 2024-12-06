@@ -8,12 +8,14 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ sections, activeSection }) => {
   useEffect(() => {
-    console.log("sections : ", sections);
-    console.log("activeSection : ", activeSection);
+    // console.log("sections : ", sections);
+    // console.log("activeSection : ", activeSection);
   }, []);
   return (
     <Outer>
-      <ProfileImg></ProfileImg>
+      <ProfileImg>
+        <img src="/images/profile-img-round.jpg" alt="profile" />
+      </ProfileImg>
       {sections.map((section) => (
         <h1 key={section} className={activeSection === section ? "active" : ""}>
           {section}
@@ -28,7 +30,7 @@ const Outer = styled.div`
   top: 0; /* 스크롤 시 상단에 고정 */
   height: 100vh; /* Sidebar의 높이를 화면 높이로 설정 */
   width: 25%;
-  background-color: #1c1c1c;
+  background-color: #191919;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -37,15 +39,11 @@ const Outer = styled.div`
   text-align: center;
 
   h1 {
-    font-size: 1.9rem;
+    font-size: 2rem;
     margin: 1rem 0;
     color: #666;
     transition: color 0.3s ease;
   }
-
-  /* h1:hover {
-    color: #fff;
-  } */
 
   h1.active {
     color: #fff; /* 활성화된 섹션의 색상 */
@@ -57,6 +55,7 @@ const ProfileImg = styled.div`
   width: 10vw;
   height: 10vw;
   margin-bottom: 2vw;
+  overflow: hidden;
 
   border: 1px solid white;
 `;

@@ -26,22 +26,22 @@ const AboutPage = () => {
   // 각 섹션의 데이터 관리
   const sections: SectionData[] = [
     {
-      id: "about",
+      id: "About Me",
       title: "About Me",
       content: <AboutSection />,
     },
     {
-      id: "career",
+      id: "Career",
       title: "Career",
       content: <CareerSection />,
     },
     {
-      id: "project",
+      id: "Project",
       title: "Project",
       content: <ProjectSection />,
     },
     {
-      id: "education",
+      id: "Education",
       title: "Education",
       content: <EduSection />,
     },
@@ -66,9 +66,10 @@ const Outer = styled.div`
   display: flex;
   margin-top: 100vh; /* 첫 번째 페이지 아래에서 시작 */
   min-height: 100vh; /* 두 번째 페이지 최소 높이를 설정 */
-  background-color: #1c1c1c;
+  /* background-color: #1c1c1c; */
+  /* background-color: #2e2e2e; */
+  background-color: #191919;
   z-index: 5;
-  border: 2px solid red;
 `;
 
 export default AboutPage;
