@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { FirstPage } from "../../components/Pages/First/FirstPage";
 import AboutPage from "../../components/Pages/About/AboutPage";
+import { ContactButton } from "../../components/UI/ContactButton";
 
 const Main = () => {
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -47,6 +48,8 @@ const Main = () => {
       <FirstPage />
       {/* 두 번째 페이지 */}
       <AboutPage />
+      {/* 연락처 토글 */}
+      <ContactButton />
     </Layout>
   );
 };

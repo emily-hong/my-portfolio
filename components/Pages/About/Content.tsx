@@ -54,7 +54,6 @@ const Content: React.FC<ContentProps> = ({
           }}
           data-section={section.id}
         >
-          <h2>{section.title}</h2>
           {section.content}
         </Section>
       ))}
@@ -65,7 +64,6 @@ const Content: React.FC<ContentProps> = ({
 const Outer = styled.div`
   width: 75%; /* Sidebar 옆의 콘텐츠 영역 */
   padding: 2rem;
-  background-color: #2e2e2e;
 `;
 
 const Section = styled.div`
@@ -82,8 +80,6 @@ const Section = styled.div`
     font-size: 1.2rem;
     line-height: 1.5;
   }
-
-  border: 2px solid blue;
 `;
 
 export default Content;
