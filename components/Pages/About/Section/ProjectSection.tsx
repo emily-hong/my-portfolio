@@ -2,21 +2,42 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Modal } from "../../../UI/Modal";
 import { projectData } from "../../../../data/projectData";
+import { ProjectDetailModal } from "./ProjectDetailModal";
 
 export const ProjectSection = () => {
+  // 필터옵션
+  const [filterOption, setFilterOption] = useState("All");
   // 상세모달창 오픈여부
   const [modalOpen, setModalOpen] = useState<number | null>(null);
 
+  // 필터버튼 처리
+  const filteredProjects = projectData.filter((project) => {
+    if (filterOption === "All") return true;
+    return project.type === filterOption; // type이 Team 또는 Personal과 일치
+  });
   // 상세모달
   const openModal = (id: number) => setModalOpen(id);
   const closeModal = () => setModalOpen(null);
 
   return (
     <Outer>
+      <FilterButtons>
+        {["All", "Team", "Personal"].map((option) => (
+          <FilterButton
+            key={option}
+            className={filterOption === option ? "active" : ""}
+            onClick={() => setFilterOption(option)}
+          >
+            {option}
+          </FilterButton>
+        ))}
+      </FilterButtons>
+
       <CardList>
-        {projectData.map((project) => (
+        {filteredProjects.map((project) => (
           <Card
             key={project.id}
+            className={modalOpen !== null ? "modal-active" : ""}
             // onClick={() => openModal(project.id)}
           >
             <div className="project-name">{project.name}</div>
@@ -31,19 +52,17 @@ export const ProjectSection = () => {
             <div className="project-summary">{project.summary}</div>
             <hr />
             <div className="project-stack">
-              {project.stack.map((stack) => (
-                <div className="project-stack-item">{stack}</div>
+              {project.stack.map((stack, index) => (
+                <div key={index} className="project-stack-item">
+                  {stack}
+                </div>
               ))}
             </div>
 
             {/* 모달창 */}
             {modalOpen && (
               <Modal isOpen={modalOpen == project.id} onClose={closeModal}>
-                <Title>{project.name}</Title>
-
-                <ProjectImg>
-                  <img src="" alt="" />
-                </ProjectImg>
+                <ProjectDetailModal project={project} />
               </Modal>
             )}
           </Card>
@@ -53,20 +72,52 @@ export const ProjectSection = () => {
   );
 };
 
-const Outer = styled.div``;
+const Outer = styled.div`
+  position: relative;
+`;
+
+const FilterButtons = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+`;
+
+const FilterButton = styled.div`
+  cursor: pointer;
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  font-size: 1.3rem;
+
+  &.active {
+    background-color: #ddddbe;
+    color: #000000;
+  }
+
+  &:not(.active) {
+    background-color: #333333;
+    color: #ffffff;
+  }
+
+  &:hover {
+    background-color: #555555;
+    color: #ffffff;
+  }
+`;
+
 const CardList = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3개의 열 */
-  gap: 2rem; /* 요소 간의 간격 */
-  padding: 1rem;
+  gap: 3rem; /* 요소 간의 간격 */
+  padding: 1rem 2rem;
 `;
 const Card = styled.div`
-  cursor: pointer;
   background-color: #333333;
   color: #ffffff;
   aspect-ratio: 1; /* 비율을 1:1로 유지 */
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   font-size: 1.2rem;
   display: flex;
   flex-direction: column;
@@ -93,52 +144,85 @@ const Card = styled.div`
   }
   .project-stack {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
+    /* justify-content: center; */
+    gap: 0.8rem;
     flex-wrap: wrap;
+    font-size: 1rem;
   }
   .project-stack-item {
     width: fit-content;
     padding: 0.2rem 0.6rem;
-    background-color: #ddddbe;
+    background-color: #9a9a9a;
     color: black;
     border-radius: 1rem;
   }
 
-  &:hover .card-hover {
-    visibility: visible; /* Hover 시 표시 */
+  &.modal-active {
+    cursor: default;
+  }
+  &:not(.modal-active):hover .card-hover {
+    visibility: visible;
   }
 `;
 const HoverDiv = styled.div`
-  position: absolute; /* Card 내부에서 절대 위치 */
-  top: 0; /* 부모(Card) 기준 상단부터 */
-  left: 0; /* 부모(Card) 기준 왼쪽부터 */
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%; /* 부모(Card) 너비와 동일 */
   height: 100%; /* 부모(Card) 높이와 동일 */
-  background-color: rgba(0, 0, 0, 0.8); /* 배경만 투명하게 설정 */
-  z-index: 1; /* 다른 요소 위에 표시 */
-  display: flex; /* 내부 버튼 정렬을 위한 flex */
-  align-items: center; /* 세로 중앙 정렬 */
-  justify-content: center; /* 가로 중앙 정렬 */
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   visibility: hidden; /* 기본적으로 숨김 */
-  /* transition: visibility 0.3s ease, opacity 0.3s ease; */
 `;
 
 const Button = styled.div`
-  border: 2px solid white;
+  border: 2px solid #eaeaea;
   font-size: 1.5rem;
-  padding: 1rem 2rem;
-  border-radius: 1rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
 `;
 
 // 상세모달
+const ModalSection = styled.div`
+  min-width: 10vw;
+  width: 50vw;
+  height: 80vh;
+  padding: 0 2rem;
+
+  overflow-y: scroll;
+  color: #333;
+  text-align: left;
+`;
 const Title = styled.div`
   font-size: 2rem;
-  color: black;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid lightgray;
 `;
 const ProjectImg = styled.div`
-  border: 1px solid red;
+  width: 80%;
+  height: 300px;
+  margin: 0 auto 2rem auto;
+
+  background-color: lightgray;
   img {
     width: 100%;
   }
+`;
+const DetailSection = styled.div`
+  border: 1px solid green;
+`;
+
+const SubTitle = styled.div`
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+`;
+const Description = styled.div`
+  font-size: 1rem;
+
+  border: 1px solid red;
 `;

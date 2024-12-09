@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 interface ModalProps {
@@ -8,11 +8,25 @@ interface ModalProps {
 }
 
 export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
+  useEffect(() => {
+    if (isOpen) {
+      // 모달 열릴 때 body 스크롤 비활성화
+      document.body.style.overflow = "hidden";
+    } else {
+      // 모달 닫힐 때 body 스크롤 초기화
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      // 컴포넌트 언마운트 시 body 스크롤 초기화
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
     <ModalOverlay onClick={onClose}>
-      {" "}
       {/* 배경 클릭 시 모달 닫기 */}
       <ModalContent onClick={(e) => e.stopPropagation()}>
         {/* 모달 내부 클릭 이벤트가 배경 클릭 이벤트로 전달되지 않도록 중단 */}
@@ -24,23 +38,24 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
 };
 
 const ModalOverlay = styled.div`
-  position: fixed; /* 화면에 항상 고정 */
-  top: 0; /* 화면의 맨 위 */
-  left: 0; /* 화면의 맨 왼쪽 */
-  width: 100%; /* 화면 전체 너비 */
-  height: 100%; /* 화면 전체 높이 */
-  background: rgba(0, 0, 0, 0.5); /* 어두운 반투명 배경 */
-  display: flex; /* 내부 콘텐츠를 중앙에 배치하기 위해 flex 사용 */
-  align-items: center; /* 세로 중앙 정렬 */
-  justify-content: center; /* 가로 중앙 정렬 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 1000; /* 다른 요소 위에 렌더링되도록 z-index 설정 */
+  overflow: hidden;
 `;
 const ModalContent = styled.div`
-  background: white; /* 모달 배경은 흰색 */
-  padding: 2rem; /* 내부 여백 */
-  border-radius: 10px; /* 모서리를 둥글게 처리 */
-  max-width: 500px; /* 최대 너비 */
-  width: 100%; /* 가로 크기를 부모 컨테이너에 맞춤 */
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  /* max-width: 500px; */
+  width: fit-content;
   position: relative; /* 닫기 버튼의 절대 위치를 위해 설정 */
 `;
 const CloseButton = styled.button`

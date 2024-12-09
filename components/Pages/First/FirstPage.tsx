@@ -21,7 +21,8 @@ export const FirstPage = () => {
 
       <RightSection>
         <ImgContainer>
-          <img src="/images/profile-img.png" alt="profile" />
+          <img src="/images/sample-profile.png" alt="profile" />
+          {/* <img src="/images/profile-img.png" alt="profile" /> */}
         </ImgContainer>
       </RightSection>
 
@@ -34,7 +35,6 @@ export const FirstPage = () => {
 };
 
 const Outer = styled.div`
-  /* position: relative; */
   width: 100%;
   height: 100vh;
   top: 0;
