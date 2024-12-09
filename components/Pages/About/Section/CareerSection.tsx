@@ -90,6 +90,7 @@ const StackContainer = styled.div`
 const StackItem = styled.div`
   width: fit-content;
   padding: 0.2rem 1rem;
-  background-color: #ddddbe;
+  background-color: #9a9a9a;
+
   border-radius: 1rem;
 `;

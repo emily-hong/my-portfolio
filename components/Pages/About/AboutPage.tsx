@@ -65,11 +65,10 @@ const AboutPage = () => {
 const Outer = styled.div`
   display: flex;
   margin-top: 100vh; /* 첫 번째 페이지 아래에서 시작 */
-  min-height: 100vh; /* 두 번째 페이지 최소 높이를 설정 */
+  min-height: 100vh; // 두 번째 페이지 최소 높이를 설정
   /* background-color: #1c1c1c; */
   /* background-color: #2e2e2e; */
   background-color: #191919;
-  z-index: 5;
 `;
 
 export default AboutPage;
