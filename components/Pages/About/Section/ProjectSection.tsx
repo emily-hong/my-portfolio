@@ -92,7 +92,7 @@ const FilterButton = styled.div`
 
   &.active {
     background-color: #ddddbe;
-    color: #000000;
+    color: #333;
   }
 
   &:not(.active) {

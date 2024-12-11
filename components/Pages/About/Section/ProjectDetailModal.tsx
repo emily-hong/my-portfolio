@@ -45,7 +45,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             <br />
             <>
               <PositionTitle>백엔드</PositionTitle>
-              {project.backendTasks.map((task, item) => (
+              {project.backendTasks?.map((task, item) => (
                 <TaskItem key={item}>{task}</TaskItem>
               ))}
             </>
@@ -62,6 +62,7 @@ const ModalSection = styled.div`
   width: 50vw;
   height: 80vh;
   padding: 0 2rem;
+  margin-top: 1rem;
 
   overflow-y: scroll;
   color: #333;
