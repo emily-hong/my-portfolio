@@ -31,12 +31,14 @@ export const CareerSection = () => {
 };
 
 const Outer = styled.div`
-  padding-top: 2rem;
+  /* padding-top: 2rem; */
   padding-left: 2rem;
   color: #f8f1e5;
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
+  height: 100%;
 `;
 const Card = styled.div`
   width: 100%;

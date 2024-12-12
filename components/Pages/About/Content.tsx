@@ -68,8 +68,8 @@ const Outer = styled.div`
 
 const Section = styled.div`
   height: 100vh;
-  margin-bottom: 2rem;
-  color: #fff;
+  /* margin-bottom: 2rem; */
+  color: #f8f1e5;
 
   h2 {
     font-size: 2rem;

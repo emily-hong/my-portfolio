@@ -11,7 +11,8 @@ body {
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto; /* 세로 스크롤을 명시적으로 허용 */
-  cursor: url("/images/cursor-icon.png"), auto;
+  /* cursor: url("/images/cursor-icon.png"), auto; */
+  /* cursor: url("/images/cursor-pointer.png"), pointer; 커스텀 커서 설정 */
   /* cursor: url("/images/cat-cursor.png"), auto; */
 }
 
