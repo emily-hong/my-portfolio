@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +16,7 @@ body {
   /* cursor: url("/images/cursor-icon.png"), auto; */
   /* cursor: url("/images/cursor-pointer.png"), pointer; 커스텀 커서 설정 */
   /* cursor: url("/images/cat-cursor.png"), auto; */
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 html {
