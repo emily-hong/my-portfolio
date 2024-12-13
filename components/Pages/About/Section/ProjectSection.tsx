@@ -34,39 +34,41 @@ export const ProjectSection = () => {
       </FilterButtons>
 
       <CardList>
-        {filteredProjects.map((project) => (
-          <Card
-            key={project.id}
-            className={modalOpen !== null ? "modal-active" : ""}
-            // onClick={() => openModal(project.id)}
-          >
-            <div className="project-name">{project.name}</div>
-            <HoverDiv className="card-hover">
-              <Button
-                // className="card-button"
-                onClick={() => openModal(project.id)}
-              >
-                상세보기
-              </Button>
-            </HoverDiv>
-            <div className="project-summary">{project.summary}</div>
-            <hr />
-            <div className="project-stack">
-              {project.stack.map((stack, index) => (
-                <div key={index} className="project-stack-item">
-                  {stack}
-                </div>
-              ))}
-            </div>
+        {filteredProjects
+          .sort((a, b) => b.id - a.id)
+          .map((project) => (
+            <Card
+              key={project.id}
+              className={modalOpen !== null ? "modal-active" : ""}
+              // onClick={() => openModal(project.id)}
+            >
+              <div className="project-name">{project.name}</div>
+              <HoverDiv className="card-hover">
+                <Button
+                  // className="card-button"
+                  onClick={() => openModal(project.id)}
+                >
+                  상세보기
+                </Button>
+              </HoverDiv>
+              <div className="project-summary">{project.summary}</div>
+              <hr />
+              <div className="project-stack">
+                {project.stack.map((stack, index) => (
+                  <div key={index} className="project-stack-item">
+                    {stack}
+                  </div>
+                ))}
+              </div>
 
-            {/* 모달창 */}
-            {modalOpen && (
-              <Modal isOpen={modalOpen == project.id} onClose={closeModal}>
-                <ProjectDetailModal project={project} />
-              </Modal>
-            )}
-          </Card>
-        ))}
+              {/* 모달창 */}
+              {modalOpen && (
+                <Modal isOpen={modalOpen == project.id} onClose={closeModal}>
+                  <ProjectDetailModal project={project} />
+                </Modal>
+              )}
+            </Card>
+          ))}
       </CardList>
     </Outer>
   );
@@ -92,17 +94,17 @@ const FilterButton = styled.div`
 
   &.active {
     background-color: #ddddbe;
-    color: #000000;
+    color: #333;
   }
 
   &:not(.active) {
     background-color: #333333;
-    color: #ffffff;
+    color: #f8f1e5;
   }
 
   &:hover {
     background-color: #555555;
-    color: #ffffff;
+    color: #f8f1e5;
   }
 `;
 
@@ -115,7 +117,7 @@ const CardList = styled.div`
 `;
 const Card = styled.div`
   background-color: #333333;
-  color: #ffffff;
+  color: #f8f1e5;
   aspect-ratio: 1; /* 비율을 1:1로 유지 */
   border-radius: 1rem;
   font-size: 1.2rem;
@@ -166,6 +168,7 @@ const Card = styled.div`
 `;
 const HoverDiv = styled.div`
   position: absolute;
+  cursor: pointer;
   top: 0;
   left: 0;
   width: 100%; /* 부모(Card) 너비와 동일 */

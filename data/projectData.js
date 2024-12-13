@@ -1,22 +1,25 @@
 export const projectData = [
   {
     id: 1,
-    name: "회사 소개 사이트",
+    name: "기업 사이트",
     type: "Team",
     date: "2022.03 - 2022.07",
     imgUrl: ["/images/project/meta-app1.png"],
     deploy: "",
     github: "",
     stack: ["React", "TypeScript", "Next.js", "Emotion"],
-    summary: "회사 관련 정보 소개 사이트",
+    summary: "기업 관련 정보 소개 사이트",
     detail:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    frontendTasks: ["", "", ""],
-    backendTasks: ["", "", ""],
+    frontendTasks: [
+      "화면 UI 및 컴포넌트 개발, API 연동",
+      "필터 및 검색 기능",
+      "무한 스크롤 및 페이지네이션",
+    ],
   },
   {
     id: 2,
-    name: "회사 관리자 사이트",
+    name: "기업 관리자 사이트",
     type: "Team",
     date: "2022.06 - 2024.02",
     imgUrl: ["/images/project/meta-app1.png"],
@@ -27,8 +30,13 @@ export const projectData = [
       "전시 공간, 작품 등 전시 관련 정보와 사용자의 정보를 관리하는 사이트",
     detail:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    frontendTasks: ["", "", ""],
-    backendTasks: ["", "", ""],
+    frontendTasks: [
+      "관리자 UI 화면 개발 및 기존 기능 개선을 통한 유지보수 작업",
+      "페이지 레이아웃, 공통 컴포넌트 구현",
+      "검색 기능 및 페이지네이션",
+      "프로젝트 유지보수",
+    ],
+    backendTasks: ["Controller와 Service를 통한 게시물 CRUD 구현 및 유지보수"],
   },
   {
     id: 3,
@@ -38,18 +46,28 @@ export const projectData = [
     imgUrl: ["/images/project/meta-app1.png"],
     deploy: "",
     github: "",
-    stack: ["React", "TypeScript", "Next.js", "Emotion"],
+    stack: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Recoil",
+      "React-Query",
+      "Emotion",
+    ],
     summary: "메타버스 기반 전시 플랫폼",
     detail:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "메타버스 전시회 플랫폼 입니다. 프론트엔드와 백엔드 간의 데이터 연동을 통해 실시간으로 작품 정보를 업데이트했습니다. 성능 최적화와 반응형 디자인을 적용하여 다양한 환경에서 원활한 사용자 경험을 제공하는 데 주력했습니다.",
     frontendTasks: [
-      "각 페이지 UI 및 API 연동",
-      "페이지 레이아웃, 컴포넌트 구현",
-      "다국어 지원",
-      "플랫폼 가이드",
+      "화면 UI 및 컴포넌트 개발, API 연동",
+      "검색 기능 및 페이지네이션",
+      "한/영 다국어 지원(next-i18next 활용)",
+      "사용자 가이드 PDF 뷰어 기능",
       "기업 뉴스레터 구독신청",
+      "WebGL상 UI 및 각 패널 구현",
+      "LG 2023 HE DX Tech Fair에 협력하여 전용 화면 제작 및 기술적 요구사항 대응",
+      "프로젝트 유지보수",
     ],
-    backendTasks: ["", "", ""],
+    backendTasks: ["Controller와 Service를 통한 게시물 CRUD 구현 및 유지보수"],
   },
   {
     id: 4,
@@ -62,9 +80,9 @@ export const projectData = [
     stack: ["Java", "Spring boot", "React", "Styled Components"],
     summary: "청소년 금융교육 플랫폼",
     detail:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "부모와 아이가 함께 사용할 수 있으며, 아이의 금융 교육과 올바른 경제 습관 형성을 돕는 플랫폼입니다. 프로젝트의 전체적인 흐름을 이해하고, 백엔드와 프론트엔드의 유기적인 연동을 통해 데이터 처리부터 화면 구성까지 전반적인 작업을 진행했습니다.",
     frontendTasks: [
-      "공통 레이아웃, 컴포넌트 구현",
+      "프로젝트 세팅 및 공통 레이아웃, 컴포넌트 구현",
       "페이지 UI 및 API 연동",
       "SSE 알림 기능 연동",
     ],
@@ -85,9 +103,7 @@ export const projectData = [
     github: "",
     stack: ["React", "TypeScript", "Next.js", "Styled Components"],
     summary: "개발자 포트폴리오 사이트",
-    detail:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    frontendTasks: ["페이지 레이아웃, 컴포넌트 구현", "", ""],
-    backendTasks: ["", "", ""],
+    detail: "저의 포트폴리오 사이트 입니다.",
+    frontendTasks: ["화면 레이아웃, 컴포넌트 구현", "다국어 지원", ""],
   },
 ];

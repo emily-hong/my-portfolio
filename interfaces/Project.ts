@@ -10,5 +10,5 @@ export interface IProject {
   summary: String;
   detail: String;
   frontendTasks: String[];
-  backendTasks: String[];
+  backendTasks?: String[];
 }

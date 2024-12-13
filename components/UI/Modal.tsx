@@ -30,7 +30,10 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
       {/* 배경 클릭 시 모달 닫기 */}
       <ModalContent onClick={(e) => e.stopPropagation()}>
         {/* 모달 내부 클릭 이벤트가 배경 클릭 이벤트로 전달되지 않도록 중단 */}
-        <CloseButton onClick={onClose}>X</CloseButton> {/* 닫기 버튼 */}
+        <CloseButton onClick={onClose}>
+          <img src="/icons/close.png" />
+        </CloseButton>{" "}
+        {/* 닫기 버튼 */}
         {children} {/* 부모로부터 전달된 자식 요소를 렌더링 */}
       </ModalContent>
     </ModalOverlay>
@@ -59,11 +62,14 @@ const ModalContent = styled.div`
   position: relative; /* 닫기 버튼의 절대 위치를 위해 설정 */
 `;
 const CloseButton = styled.button`
+  cursor: pointer;
   position: absolute; /* 모달 내부에서 절대 위치 */
-  top: 10px; /* 상단 여백 */
-  right: 10px; /* 오른쪽 여백 */
-  background: none; /* 배경 제거 */
-  border: none; /* 버튼 테두리 제거 */
-  font-size: 1.5rem; /* 버튼 크기 */
-  cursor: pointer; /* 클릭 가능한 커서 */
+  top: 1rem;
+  right: 1rem;
+  width: 2rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
 `;
