@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { FirstPage } from "../../components/Pages/First/FirstPage";
-import AboutPage from "../../components/Pages/About/AboutPage";
-import { ContactButton } from "../../components/UI/ContactButton";
+import { FirstPage } from "../components/Pages/First/FirstPage";
+import AboutPage from "../components/Pages/About/AboutPage";
+import { ContactButton } from "../components/UI/ContactButton";
 
 const Main = () => {
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -44,6 +45,20 @@ const Main = () => {
 
   return (
     <Layout>
+      <div
+        className="container"
+        onPointerMove={(event) => {
+          setMousePosition({ x: event.clientX, y: event.clientY });
+        }}
+      >
+        {/* 마우스 커서 위치를 보여주는 요소 */}
+        <Pointer
+          style={{
+            left: mousePosition.x,
+            top: mousePosition.y,
+          }}
+        />
+      </div>
       {/* 전체 콘텐츠 */}
       <FirstPage />
       {/* 두 번째 페이지 */}
@@ -60,6 +75,15 @@ const Layout = styled.div`
   width: 100%;
   /* overflow: hidden;  */
   /* 가로 스크롤 방지 */
+`;
+
+const Pointer = styled.div`
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: red; /* 커서 위치 확인용 색상 */
+  border-radius: 50%;
+  pointer-events: none; /* 마우스 이벤트 무시 */
 `;
 
 export default Main;
