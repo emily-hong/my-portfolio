@@ -1,0 +1,71 @@
+{
+  "1": {
+    "name": "Portfolio Website",
+    "summary": "Developer's portfolio website",
+    "detail": "This is my portfolio website.",
+    "frontendTasks": [
+      "Designed layout and implemented components",
+      "Added multilingual support"
+    ]
+  },
+  "2": {
+    "name": "Corporate Website",
+    "summary": "Corporate information introduction site",
+    "detail": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "frontendTasks": [
+      "Developed UI components and integrated APIs",
+      "Implemented filter and search functionality",
+      "Added infinite scrolling and pagination"
+    ]
+  },
+  "3": {
+    "name": "Corporate Admin Site",
+    "summary": "A site for managing exhibition spaces, artworks, and user information",
+    "detail": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "frontendTasks": [
+      "Developed admin UI and maintained existing features",
+      "Implemented page layouts and common components",
+      "Added search functionality and pagination",
+      "Project maintenance"
+    ],
+    "backendTasks": [
+      "Implemented CRUD for posts using Controller and Service",
+      "Performed backend maintenance"
+    ]
+  },
+  "4": {
+    "name": "Metaverse Platform",
+    "summary": "A metaverse-based exhibition platform",
+    "detail": "This is a metaverse exhibition platform. Real-time updates of artwork information were achieved by connecting frontend and backend data. Performance optimization and responsive design were applied to ensure seamless user experience across different environments.",
+    "frontendTasks": [
+      "Developed UI components and integrated APIs",
+      "Added search functionality and pagination",
+      "Implemented bilingual support (using next-i18next)",
+      "Created user guide PDF viewer",
+      "Enabled corporate newsletter subscriptions",
+      "Developed UI panels and controls on WebGL",
+      "Collaborated with LG 2023 HE DX Tech Fair to create exclusive screens and meet technical requirements",
+      "Project maintenance"
+    ],
+    "backendTasks": [
+      "Implemented CRUD for posts using Controller and Service",
+      "Performed backend maintenance"
+    ]
+  },
+  "5": {
+    "name": "Donimoni",
+    "summary": "A financial education platform for teenagers",
+    "detail": "A platform designed for both parents and children to promote financial education and healthy economic habits. The project involved end-to-end development, from data processing to UI design, ensuring seamless interaction between frontend and backend.",
+    "frontendTasks": [
+      "Set up project structure and implemented common layouts and components",
+      "Designed page UI and integrated APIs",
+      "Integrated SSE-based notification features"
+    ],
+    "backendTasks": [
+      "Created API documentation and extracted entities",
+      "Modeled database and implemented JPA relationships",
+      "Developed repository and performed JUnit testing",
+      "Implemented Service and Controller layers and tested with Postman"
+    ]
+  }
+}

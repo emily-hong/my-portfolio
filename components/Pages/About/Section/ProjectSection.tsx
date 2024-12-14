@@ -3,8 +3,11 @@ import styled from "styled-components";
 import { Modal } from "../../../UI/Modal";
 import { projectData } from "../../../../data/projectData";
 import { ProjectDetailModal } from "./ProjectDetailModal";
+import { useTranslation } from "react-i18next";
 
 export const ProjectSection = () => {
+  const { t } = useTranslation("project");
+
   // 필터옵션
   const [filterOption, setFilterOption] = useState("All");
   // 상세모달창 오픈여부
@@ -36,39 +39,45 @@ export const ProjectSection = () => {
       <CardList>
         {filteredProjects
           .sort((a, b) => b.id - a.id)
-          .map((project) => (
-            <Card
-              key={project.id}
-              className={modalOpen !== null ? "modal-active" : ""}
-              // onClick={() => openModal(project.id)}
-            >
-              <div className="project-name">{project.name}</div>
-              <HoverDiv className="card-hover">
-                <Button
-                  // className="card-button"
-                  onClick={() => openModal(project.id)}
-                >
-                  상세보기
-                </Button>
-              </HoverDiv>
-              <div className="project-summary">{project.summary}</div>
-              <hr />
-              <div className="project-stack">
-                {project.stack.map((stack, index) => (
-                  <div key={index} className="project-stack-item">
-                    {stack}
-                  </div>
-                ))}
-              </div>
+          .map((project) => {
+            const translatedProject = t(String(project.id), {
+              returnObjects: true,
+            });
 
-              {/* 모달창 */}
-              {modalOpen && (
-                <Modal isOpen={modalOpen == project.id} onClose={closeModal}>
-                  <ProjectDetailModal project={project} />
-                </Modal>
-              )}
-            </Card>
-          ))}
+            return (
+              <Card
+                key={project.id}
+                className={modalOpen !== null ? "modal-active" : ""}
+                // onClick={() => openModal(project.id)}
+              >
+                <div className="project-name">{project.name}</div>
+                <HoverDiv className="card-hover">
+                  <Button
+                    // className="card-button"
+                    onClick={() => openModal(project.id)}
+                  >
+                    상세보기
+                  </Button>
+                </HoverDiv>
+                <div className="project-summary">{project.summary}</div>
+                <hr />
+                <div className="project-stack">
+                  {project.stack.map((stack, index) => (
+                    <div key={index} className="project-stack-item">
+                      {stack}
+                    </div>
+                  ))}
+                </div>
+
+                {/* 모달창 */}
+                {modalOpen && (
+                  <Modal isOpen={modalOpen == project.id} onClose={closeModal}>
+                    <ProjectDetailModal project={project} />
+                  </Modal>
+                )}
+              </Card>
+            );
+          })}
       </CardList>
     </Outer>
   );
