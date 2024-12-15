@@ -1,5 +1,6 @@
 export const projectData = [
   {
+    // 포트폴리오 사이트
     id: 1,
     name: "1.name", // 번역 키
     type: "Team",
@@ -11,10 +12,10 @@ export const projectData = [
     frontendTasks: [
       "1.frontendTasks.task1", // 번역 키
       "1.frontendTasks.task2",
-      "1.frontendTasks.task3",
     ],
   },
   {
+    // 기업 사이트
     id: 2,
     name: "2.name",
     type: "Team",
@@ -32,11 +33,12 @@ export const projectData = [
     ],
   },
   {
+    // 기업 관리자 사이트
     id: 3,
     name: "3.name",
     type: "Team",
     date: "2022.06 ~ 2024.02",
-    imgUrl: ["/images/project/meta-app1.png"],
+    // imgUrl: ["/images/project/meta-app1.png"],
     deploy: "",
     github: "",
     stack: ["React", "TypeScript", "Next.js", "Emotion"],
@@ -50,6 +52,7 @@ export const projectData = [
     backendTasks: ["3.backendTasks.task1"],
   },
   {
+    // 메타버스 플랫폼
     id: 4,
     name: "4.name",
     type: "Team",
@@ -80,6 +83,7 @@ export const projectData = [
     backendTasks: ["4.backendTasks.task1"],
   },
   {
+    // 도니모니
     id: 5,
     name: "5.name",
     type: "Team",
@@ -91,15 +95,15 @@ export const projectData = [
     summary: "5.summary",
     detail: "5.detail",
     frontendTasks: [
-      "프로젝트 세팅 및 공통 레이아웃, 컴포넌트 구현",
-      "페이지 UI 및 API 연동",
-      "SSE 알림 기능 연동",
+      "5.frontendTasks.task1",
+      "5.frontendTasks.task2",
+      "5.frontendTasks.task3",
     ],
     backendTasks: [
-      "API 명세서 작성 및 Entity 추출",
-      "DB모델링, JPA 연관관계 매핑",
-      "Repository 구현 및 JUnit 테스트",
-      "Service, Controller 구현 및 Postman 테스트",
+      "5.backendTasks.task1",
+      "5.backendTasks.task1",
+      "5.backendTasks.task1",
+      "5.backendTasks.task1",
     ],
   },
 ];

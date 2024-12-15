@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { IProject } from "../../../../interfaces/Project";
+import { useTranslation } from "react-i18next";
 
 interface ProjectDetailModalProps {
   project: IProject;
@@ -8,18 +9,22 @@ interface ProjectDetailModalProps {
 export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
   project,
 }) => {
+  const { t } = useTranslation("project");
+
   return (
     <ModalSection>
-      <Title>{project.name}</Title>
+      <Title>{t(`${project.name}`)}</Title>
       {/* 사이트 이미지 (추후 배열) */}
-      <ProjectImg>
-        <img src={project.imgUrl[0].toString()} alt="project" />
-      </ProjectImg>
+      {project.imgUrl && (
+        <ProjectImg>
+          <img src={project.imgUrl[0].toString()} alt="project" />
+        </ProjectImg>
+      )}
 
       <DetailSection>
         <Subject>
           <SubTitle>소개</SubTitle>
-          <Description>{project.detail}</Description>
+          <Description>{t(`${project.detail}`)}</Description>
         </Subject>
 
         <Subject>
@@ -38,15 +43,21 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
           <Description>
             <>
               <PositionTitle>프론트엔드</PositionTitle>
-              {project.frontendTasks.map((task, item) => (
-                <TaskItem key={item}>{task}</TaskItem>
+              {project.frontendTasks.map((task, index) => (
+                <TaskItem key={index}>
+                  {t(`${project.id}.frontendTasks.${index}`)}
+                  {/* 번역 키로 처리 */}
+                </TaskItem>
               ))}
             </>
             <br />
             <>
               <PositionTitle>백엔드</PositionTitle>
-              {project.backendTasks?.map((task, item) => (
-                <TaskItem key={item}>{task}</TaskItem>
+              {project.backendTasks?.map((task, index) => (
+                <TaskItem key={index}>
+                  {t(`${project.id}.backendTasks.${index}`)}
+                  {/* 번역 키로 처리 */}
+                </TaskItem>
               ))}
             </>
           </Description>
