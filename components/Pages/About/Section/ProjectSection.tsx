@@ -40,9 +40,13 @@ export const ProjectSection = () => {
         {filteredProjects
           .sort((a, b) => b.id - a.id)
           .map((project) => {
-            const translatedProject = t(String(project.id), {
+            // 프로젝트 번역 데이터 가져오기
+            const translatedProject = t(project.id.toString(), {
               returnObjects: true,
-            });
+            }) as {
+              name: string;
+              summary: string;
+            };
 
             return (
               <Card
@@ -50,7 +54,7 @@ export const ProjectSection = () => {
                 className={modalOpen !== null ? "modal-active" : ""}
                 // onClick={() => openModal(project.id)}
               >
-                <div className="project-name">{project.name}</div>
+                <div className="project-name">{translatedProject.name}</div>
                 <HoverDiv className="card-hover">
                   <Button
                     // className="card-button"
@@ -59,7 +63,9 @@ export const ProjectSection = () => {
                     상세보기
                   </Button>
                 </HoverDiv>
-                <div className="project-summary">{project.summary}</div>
+                <div className="project-summary">
+                  {translatedProject.summary}
+                </div>
                 <hr />
                 <div className="project-stack">
                   {project.stack.map((stack, index) => (

@@ -3,9 +3,9 @@ export interface IProject {
   name: String;
   type: String;
   date: String;
-  imgUrl: String[];
-  deploy: String;
-  github: String;
+  imgUrl?: String[];
+  deploy?: String;
+  github?: String;
   stack: String[];
   summary: String;
   detail: String;
