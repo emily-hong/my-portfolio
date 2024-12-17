@@ -21,7 +21,7 @@ export const FirstPage = () => {
 
       <RightSection>
         <ImgContainer>
-          <img src="/images/sample-profile.png" alt="profile" />
+          {/* <img src="/images/sample-profile.png" alt="profile" /> */}
           {/* <img src="/images/profile-img.png" alt="profile" /> */}
         </ImgContainer>
       </RightSection>

@@ -4,6 +4,7 @@ export interface IProject {
   type: String;
   date: String;
   imgUrl?: String[];
+  videoUrl?: String;
   deploy?: String;
   github?: String;
   stack: String[];

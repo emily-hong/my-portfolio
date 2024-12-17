@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Modal } from "../../../UI/Modal";
 import { projectData } from "../../../../data/projectData";
 import { ProjectDetailModal } from "./ProjectDetailModal";
 import { useTranslation } from "react-i18next";
 
-export const ProjectSection = () => {
-  const { t } = useTranslation("project");
+const ProjectSection = () => {
+  const { t, i18n } = useTranslation("project");
+  const currentLanguage = i18n.language;
 
   // 필터옵션
   const [filterOption, setFilterOption] = useState("All");
@@ -18,6 +19,7 @@ export const ProjectSection = () => {
     if (filterOption === "All") return true;
     return project.type === filterOption; // type이 Team 또는 Personal과 일치
   });
+
   // 상세모달
   const openModal = (id: number) => setModalOpen(id);
   const closeModal = () => setModalOpen(null);
@@ -40,8 +42,8 @@ export const ProjectSection = () => {
         {filteredProjects
           .sort((a, b) => b.id - a.id)
           .map((project) => {
-            // 프로젝트 번역 데이터 가져오기
-            const translatedProject = t(project.id.toString(), {
+            // 번역 데이터 가져오기
+            const translatedProject = t(`${project.id}`, {
               returnObjects: true,
             }) as {
               name: string;
@@ -60,7 +62,7 @@ export const ProjectSection = () => {
                     // className="card-button"
                     onClick={() => openModal(project.id)}
                   >
-                    상세보기
+                    {currentLanguage === "ko" ? "상세보기" : "Detail View"}
                   </Button>
                 </HoverDiv>
                 <div className="project-summary">
@@ -244,3 +246,5 @@ const Description = styled.div`
 
   border: 1px solid red;
 `;
+
+export default ProjectSection;

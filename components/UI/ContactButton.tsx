@@ -1,17 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled, { keyframes, css } from "styled-components";
 
 export const ContactButton = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // 드롭다운 메뉴 상태 관리
+  const menuRef = useRef<HTMLUListElement | null>(null); // 메뉴 리스트 참조
+  const buttonRef = useRef<HTMLDivElement | null>(null); // 버튼 참조
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev); // 드롭다운 메뉴 열기/닫기 상태 변경
   };
 
+  // 외부 클릭 감지
+  useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(e.target as Node) && // 메뉴 외부 클릭 감지
+        buttonRef.current &&
+        !buttonRef.current.contains(e.target as Node) // 버튼 외부 클릭 감지
+      ) {
+        setIsMenuOpen(false); // 메뉴 닫기
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
+  }, []);
+
   return (
-    <Outer onClick={toggleMenu}>
-      Contact Me
-      <MenuList $isMenuOpen={isMenuOpen}>
+    <Outer ref={buttonRef} onClick={toggleMenu}>
+      Contact
+      <MenuList ref={menuRef} $isMenuOpen={isMenuOpen}>
         <MenuItem delay={0.4}>
           <a href="mailto:emilyhong4659@gmail.com" target="_blank">
             <div className="icon-container">

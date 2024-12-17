@@ -3,9 +3,9 @@ export const projectData = [
     // 포트폴리오 사이트
     id: 1,
     name: "1.name", // 번역 키
-    type: "Team",
+    type: "Personal",
     date: "2022.03 - 2022.07",
-    imgUrl: ["/images/project/meta-app1.png"],
+    imgUrl: ["/images/project/meta_app/meta-app1.png"],
     stack: ["React", "TypeScript", "Next.js", "Emotion"],
     summary: "1.summary", // 번역 키
     detail: "1.detail", // 번역 키
@@ -20,7 +20,7 @@ export const projectData = [
     name: "2.name",
     type: "Team",
     date: "2022.03 ~ 2022.07",
-    imgUrl: ["/images/project/meta-app1.png"],
+    imgUrl: ["/images/project/meta_app/meta-app1.png"],
     deploy: "",
     github: "",
     stack: ["React", "TypeScript", "Next.js", "Emotion"],
@@ -57,7 +57,7 @@ export const projectData = [
     name: "4.name",
     type: "Team",
     date: "2022.08 ~ 2024.01",
-    imgUrl: ["/images/project/meta-app1.png"],
+    imgUrl: ["/images/project/meta_app/meta-app1.png"],
     deploy: "",
     github: "",
     stack: [
@@ -88,7 +88,7 @@ export const projectData = [
     name: "5.name",
     type: "Team",
     date: "2024.10 ~ 2024.11",
-    imgUrl: ["/images/project/meta-app1.png"],
+    videoUrl: "https://player.vimeo.com/video/1039902279?autoplay=1",
     deploy: "",
     github: "",
     stack: ["Java", "Spring boot", "React", "Styled Components"],

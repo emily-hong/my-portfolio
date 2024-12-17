@@ -10,7 +10,7 @@ i18n
   .init({
     fallbackLng: "ko", // 번역 키가 없을 때 기본 언어 설정
     lng: "ko", // 초기 언어를 강제로 한국어로 설정
-    debug: true, // 개발 환경에서 디버그 활성화
+    // debug: true, // 개발 환경에서 디버그 활성화
     interpolation: {
       escapeValue: false, // React는 자동으로 XSS를 방지하므로 escape 필요 없음
     },
