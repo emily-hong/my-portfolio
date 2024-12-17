@@ -32,7 +32,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
         {/* 모달 내부 클릭 이벤트가 배경 클릭 이벤트로 전달되지 않도록 중단 */}
         <CloseButton onClick={onClose}>
           <img src="/icons/close.png" />
-        </CloseButton>{" "}
+        </CloseButton>
         {/* 닫기 버튼 */}
         {children} {/* 부모로부터 전달된 자식 요소를 렌더링 */}
       </ModalContent>

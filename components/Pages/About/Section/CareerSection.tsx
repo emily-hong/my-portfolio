@@ -1,37 +1,50 @@
-import React from "react";
+import React, { useTransition } from "react";
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { careerData } from "../../../../data/careerData";
 
 export const CareerSection = () => {
+  const { t } = useTranslation("career");
+
   return (
     <Outer>
-      {careerData.map((item) => (
-        <Card key={item.id}>
-          <Logo>
-            <img src={`/images/${item.logo}`} />
-          </Logo>
-          <Description>
-            <div className="date">
-              {item.startDate} - {item.endDate}
-            </div>
-            <div className="company">{item.companyName}</div>
-            <div className="position">{item.position}</div>
-            <div className="contribution">{item.contribute}</div>
+      {careerData.map((career) => {
+        const translatedCareer = t(`${career.id}`, {
+          returnObjects: true,
+        }) as {
+          companyName: string;
+          position: string;
+          contribute: string;
+        };
 
-            <StackContainer>
-              {item.stack.map((item) => (
-                <StackItem key={item}>{item}</StackItem>
-              ))}
-            </StackContainer>
-          </Description>
-        </Card>
-      ))}
+        return (
+          <Card key={career.id}>
+            <Logo>
+              <img src={`/images/${career.logo}`} />
+            </Logo>
+            <Description>
+              <div className="date">
+                {career.startDate} - {career.endDate}
+              </div>
+              <div className="company">{translatedCareer.companyName}</div>
+              <div className="position">{translatedCareer.position}</div>
+              <div className="contribution">{translatedCareer.contribute}</div>
+
+              <StackContainer>
+                {career.stack.map((stack) => (
+                  <StackItem key={stack}>{stack}</StackItem>
+                ))}
+              </StackContainer>
+            </Description>
+          </Card>
+        );
+      })}
     </Outer>
   );
 };
 
 const Outer = styled.div`
-  /* padding-top: 2rem; */
+  /* padding-top: 2rem;E */
   padding-left: 2rem;
   color: #f8f1e5;
   display: flex;

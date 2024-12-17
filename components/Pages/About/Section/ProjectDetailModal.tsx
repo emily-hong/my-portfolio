@@ -14,10 +14,24 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
   return (
     <ModalSection>
       <Title>{t(`${project.name}`)}</Title>
-      {/* 사이트 이미지 (추후 배열) */}
+      {/* image */}
       {project.imgUrl && (
         <ProjectImg>
-          <img src={project.imgUrl[0].toString()} alt="project" />
+          <img src={`${project.imgUrl[0]}`} alt="project" />
+        </ProjectImg>
+      )}
+      {/* video */}
+      {project.videoUrl && (
+        <ProjectImg>
+          <iframe
+            src={`${project.videoUrl}`}
+            width="100%"
+            height="100%"
+            style={{ border: "none" }}
+            allow="fullscreen; picture-in-picture"
+            allowFullScreen
+            title="Vimeo Video"
+          ></iframe>
         </ProjectImg>
       )}
 

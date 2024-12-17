@@ -1,0 +1,10 @@
+{
+  "1": {
+    "title": "I am Hyeonjeong Hong, a developer who prioritizes the user's perspective above all else.",
+    "description": "I believe that IT services hold value in making users' lives more convenient, and I strive to create better services.\nI find fulfillment in solving both big and small problems and growing through the process.\n\nIn particular, I consider persistence and execution as my strengths, especially when tackling complex problems that arise during collaboration.\nI design services without losing a user-centered perspective,\nand I constantly think and challenge myself to provide stable and satisfying services.\n\nI am looking for a company that believes in my attitude and growth, so we can move forward together."
+  },
+  "2": {
+    "title": "Why I Want to Become a Full-Stack Developer",
+    "description": "As a frontend developer, I have spent the past two years designing user-friendly UI and UX, thoroughly enjoying the process of web development.\nHowever, while working on projects, I realized the importance of backend development during API communication and data modeling processes,\nand I decided to become a full-stack developer to build more efficient and stable services.\n\nTo achieve this, I focused on learning backend technologies centered around Java,\ngaining practical skills in RESTful API design, database management, and server logic implementation.\nThrough this process, I have realized that the seamless integration of frontend and backend significantly enhances the completeness of a service.\n\nMoving forward, as a full-stack developer, I aim to provide more complete and polished services\nby combining UI/UX design with stable server logic, and to become an indispensable developer for my team."
+  }
+}

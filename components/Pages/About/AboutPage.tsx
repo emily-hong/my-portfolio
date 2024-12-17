@@ -4,8 +4,10 @@ import Content from "./Content";
 import Sidebar from "./Sidebar";
 import { CareerSection } from "./Section/CareerSection";
 import { AboutSection } from "./Section/AboutSection";
-import { ProjectSection } from "./Section/ProjectSection";
+// import { ProjectSection } from "./Section/ProjectSection";
+
 import { EduSection } from "./Section/EduSection";
+import dynamic from "next/dynamic";
 
 /*
   두 번째 페이지
@@ -23,6 +25,12 @@ interface SectionData {
 }
 
 const AboutPage = () => {
+  // CSR 전용으로 설정
+  const ProjectSection = dynamic(
+    () => import("./Section/ProjectSection"),
+    { ssr: false } // SSR 비활성화
+  );
+
   // 각 섹션의 데이터 관리
   const sections: SectionData[] = [
     {

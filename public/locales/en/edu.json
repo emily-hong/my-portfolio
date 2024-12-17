@@ -1,1 +1,12 @@
-{}
+{
+  "1": {
+    "academy": "Codestates",
+    "summary": "Completed JavaScript-Based Web Development Training Program",
+    "description": "Throughout the course, I primarily worked on assignments and coding tests through pair programming. At the end of the program, I collaborated with my teammates to complete both a semi-project and a final project."
+  },
+  "2": {
+    "academy": "Korea Software Technology Association",
+    "summary": "Completed Java-Based Full-Stack Development Training Program",
+    "description": "In the curriculum, I solved daily assignments on the topics learned each day and conducted semi-projects with my team at the end of each subject to review the material. Additionally, I completed a final project at the conclusion of the program."
+  }
+}
