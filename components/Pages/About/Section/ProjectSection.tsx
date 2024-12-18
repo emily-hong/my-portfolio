@@ -128,8 +128,8 @@ const FilterButton = styled.div`
 const CardList = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3개의 열 */
-  gap: 3rem; /* 요소 간의 간격 */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
   padding: 1rem 2rem;
 `;
 const Card = styled.div`
@@ -146,7 +146,7 @@ const Card = styled.div`
   padding: 1vw;
   position: relative;
 
-  overflow: hidden; /* 버튼이 카드 밖으로 넘어가지 않도록 설정 */
+  overflow: hidden;
 
   .project-name {
     font-weight: bold;
@@ -188,14 +188,14 @@ const HoverDiv = styled.div`
   cursor: pointer;
   top: 0;
   left: 0;
-  width: 100%; /* 부모(Card) 너비와 동일 */
-  height: 100%; /* 부모(Card) 높이와 동일 */
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  visibility: hidden; /* 기본적으로 숨김 */
+  visibility: hidden;
 `;
 
 const Button = styled.div`
@@ -203,48 +203,6 @@ const Button = styled.div`
   font-size: 1.5rem;
   padding: 0.5rem 1.5rem;
   border-radius: 0.5rem;
-`;
-
-// 상세모달
-const ModalSection = styled.div`
-  min-width: 10vw;
-  width: 50vw;
-  height: 80vh;
-  padding: 0 2rem;
-
-  overflow-y: scroll;
-  color: #333;
-  text-align: left;
-`;
-const Title = styled.div`
-  font-size: 2rem;
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
-  border-bottom: 2px solid lightgray;
-`;
-const ProjectImg = styled.div`
-  width: 80%;
-  height: 300px;
-  margin: 0 auto 2rem auto;
-
-  background-color: lightgray;
-  img {
-    width: 100%;
-  }
-`;
-const DetailSection = styled.div`
-  border: 1px solid green;
-`;
-
-const SubTitle = styled.div`
-  font-size: 1.4rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-`;
-const Description = styled.div`
-  font-size: 1rem;
-
-  border: 1px solid red;
 `;
 
 export default ProjectSection;

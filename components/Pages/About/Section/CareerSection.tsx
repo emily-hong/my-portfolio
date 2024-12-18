@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { careerData } from "../../../../data/careerData";
 
-export const CareerSection = () => {
+const CareerSection = () => {
   const { t } = useTranslation("career");
 
   return (
@@ -109,3 +109,5 @@ const StackItem = styled.div`
 
   border-radius: 1rem;
 `;
+
+export default CareerSection;

@@ -2,8 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { eduData } from "../../../../data/eduData";
 import { IEdu } from "../../../../interfaces/Edu";
+import { useTranslation } from "react-i18next";
 
-export const EduSection = () => {
+const EduSection = () => {
+  const { t } = useTranslation("edu");
+
   return (
     <Outer>
       <Section>
@@ -16,21 +19,31 @@ export const EduSection = () => {
         <Content>
           {eduData
             .sort((a, b) => b.id - a.id)
-            .map((edu: IEdu) => (
-              <ContentItem key={edu.id}>
-                <div className="date">{edu.date}</div>
-                <div className="name">{edu.academy}</div>
-                <div className="summary">{edu.summary}</div>
-                <div className="description">{edu.description}</div>
-                <div className="stack">
-                  {edu.stack.map((item, index) => (
-                    <div key={index} className="stack-item">
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </ContentItem>
-            ))}
+            .map((edu: IEdu) => {
+              const translatedEdu = t(`${edu.id}`, {
+                returnObjects: true,
+              }) as {
+                academy: String;
+                summary: String;
+                description: String;
+              };
+
+              return (
+                <ContentItem key={edu.id}>
+                  <div className="date">{edu.date}</div>
+                  <div className="name">{translatedEdu.academy}</div>
+                  <div className="summary">{translatedEdu.summary}</div>
+                  <div className="description">{translatedEdu.description}</div>
+                  <div className="stack">
+                    {edu.stack.map((item, index) => (
+                      <div key={index} className="stack-item">
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </ContentItem>
+              );
+            })}
         </Content>
       </Section>
     </Outer>
@@ -113,3 +126,5 @@ const ContentItem = styled.div`
     color: #333;
   }
 `;
+
+export default EduSection;
