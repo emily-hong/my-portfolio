@@ -68,20 +68,3 @@ const Title = styled.div`
 const Description = styled.div`
   font-size: 1rem;
 `;
-
-const ContactIcons = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1vw;
-
-  border: 1px solid red;
-`;
-const IconConatiner = styled.div`
-  .icon-container {
-    width: 1vw;
-    height: 1vw;
-  }
-  img {
-    height: 100%;
-  }
-`;

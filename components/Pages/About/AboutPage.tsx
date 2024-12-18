@@ -2,19 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import Content from "./Content";
 import Sidebar from "./Sidebar";
-import { CareerSection } from "./Section/CareerSection";
+import dynamic from "next/dynamic";
 import { AboutSection } from "./Section/AboutSection";
 // import { ProjectSection } from "./Section/ProjectSection";
-
-import { EduSection } from "./Section/EduSection";
-import dynamic from "next/dynamic";
+// import { EduSection } from "./Section/EduSection";
+// import CareerSection from "./Section/CareerSection";
 
 /*
-  두 번째 페이지
-  About Me : 자기소개, 깃허브, 블로그주소, 이메일
-  Carrer : 경력사항
-  Project : 작업했던 프로젝트 소개, 모달창 상세소개 
-  Education : 개발 관련 교육 이수 내용
+  About, Career, Project, Education
 */
 
 // 각 섹션의 데이터를 정의하는 인터페이스
@@ -28,6 +23,14 @@ const AboutPage = () => {
   // CSR 전용으로 설정
   const ProjectSection = dynamic(
     () => import("./Section/ProjectSection"),
+    { ssr: false } // SSR 비활성화
+  );
+  const CareerSection = dynamic(
+    () => import("./Section/CareerSection"),
+    { ssr: false } // SSR 비활성화
+  );
+  const EduSection = dynamic(
+    () => import("./Section/EduSection"),
     { ssr: false } // SSR 비활성화
   );
 
