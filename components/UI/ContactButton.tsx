@@ -29,7 +29,7 @@ export const ContactButton = () => {
 
   return (
     <Outer ref={buttonRef} onClick={toggleMenu}>
-      Contact
+      Links
       <MenuList ref={menuRef} $isMenuOpen={isMenuOpen}>
         <MenuItem delay={0.4}>
           <a href="mailto:emilyhong4659@gmail.com" target="_blank">
@@ -80,8 +80,8 @@ const Outer = styled.div`
   align-items: center;
   bottom: 2rem;
   right: 3rem;
-  width: 6rem;
-  height: 6rem;
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
   background-color: white;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
