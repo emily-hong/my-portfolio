@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { IProject } from "../../../../interfaces/Project";
 import { useTranslation } from "react-i18next";
+import Slider from "react-slick";
 
 interface ProjectDetailModalProps {
   project: IProject;
@@ -10,6 +11,16 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
   project,
 }) => {
   const { t } = useTranslation("project");
+
+  // react slick setting
+  const settings = {
+    fade: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    waitForAnimate: false,
+  };
 
   return (
     <ModalSection>
@@ -20,6 +31,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
           <img src={`${project.imgUrl[0]}`} alt="project" />
         </ProjectImg>
       )}
+
       {/* video */}
       {project.videoUrl && (
         <ProjectImg>
@@ -39,6 +51,28 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
         <Subject>
           <SubTitle>소개</SubTitle>
           <Description>{t(`${project.detail}`)}</Description>
+          {/* 관련 링크 : 깃허브, 운영url 등 */}
+          {project.links && (
+            <LinkSection>
+              <SubTitle>관련 링크</SubTitle>
+              {project.links.map((link, index) => {
+                return (
+                  <Link key={index}>
+                    {link.github && (
+                      <a href={link.github} target="_blank">
+                        <img src="/icons/github-black.png" alt="github" />
+                      </a>
+                    )}
+                    {link.deploy && (
+                      <a href={link.deploy} target="_blank">
+                        <img src="/icons/deploy-black.png" alt="deploy" />
+                      </a>
+                    )}
+                  </Link>
+                );
+              })}
+            </LinkSection>
+          )}
         </Subject>
 
         <Subject>
@@ -55,25 +89,29 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
         <Subject>
           <SubTitle>주요 작업</SubTitle>
           <Description>
-            <>
-              <PositionTitle>프론트엔드</PositionTitle>
-              {project.frontendTasks.map((task, index) => (
-                <TaskItem key={index}>
-                  {t(`${project.id}.frontendTasks.${index}`)}
-                  {/* 번역 키로 처리 */}
-                </TaskItem>
-              ))}
-            </>
+            {project.frontendTasks && (
+              <>
+                <PositionTitle>&nbsp;프론트엔드</PositionTitle>
+                {project.frontendTasks.map((task, index) => (
+                  <TaskItem key={index}>
+                    {t(`${project.id}.frontendTasks.${index}`)}
+                    {/* 번역 키로 처리 */}
+                  </TaskItem>
+                ))}
+              </>
+            )}
             <br />
-            <>
-              <PositionTitle>백엔드</PositionTitle>
-              {project.backendTasks?.map((task, index) => (
-                <TaskItem key={index}>
-                  {t(`${project.id}.backendTasks.${index}`)}
-                  {/* 번역 키로 처리 */}
-                </TaskItem>
-              ))}
-            </>
+            {project.backendTasks && (
+              <>
+                <PositionTitle>&nbsp;백엔드</PositionTitle>
+                {project.backendTasks.map((task, index) => (
+                  <TaskItem key={index}>
+                    {t(`${project.id}.backendTasks.${index}`)}
+                    {/* 번역 키로 처리 */}
+                  </TaskItem>
+                ))}
+              </>
+            )}
           </Description>
         </Subject>
       </DetailSection>
@@ -133,6 +171,18 @@ const Description = styled.div`
     background-color: #f2f2f2;
     padding: 0.5rem 1rem;
     border-radius: 1rem;
+  }
+`;
+const LinkSection = styled.div``;
+const Link = styled.div`
+  margin-top: 1rem;
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
   }
 `;
 

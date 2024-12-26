@@ -7,12 +7,15 @@ export const projectData = [
     date: "2022.03 - 2022.07",
     imgUrl: ["/images/project/meta_app/meta-app1.png"],
     stack: ["React", "TypeScript", "Next.js", "Emotion"],
-    summary: "1.summary", // 번역 키
-    detail: "1.detail", // 번역 키
-    frontendTasks: [
-      "1.frontendTasks.task1", // 번역 키
-      "1.frontendTasks.task2",
+    links: [
+      {
+        github: "https://github.com/emily-hong/my-portfolio",
+      },
+      { deploy: "" },
     ],
+    summary: "1.summary",
+    detail: "1.detail",
+    frontendTasks: ["1.frontendTasks.task1", "1.frontendTasks.task2"],
   },
   {
     // 기업 사이트
@@ -21,8 +24,6 @@ export const projectData = [
     type: "Team",
     date: "2022.03 ~ 2022.07",
     imgUrl: ["/images/project/meta_app/meta-app1.png"],
-    deploy: "",
-    github: "",
     stack: ["React", "TypeScript", "Next.js", "Emotion"],
     summary: "2.summary",
     detail: "2.detail",
@@ -39,8 +40,6 @@ export const projectData = [
     type: "Team",
     date: "2022.06 ~ 2024.02",
     // imgUrl: ["/images/project/meta-app1.png"],
-    deploy: "",
-    github: "",
     stack: ["React", "TypeScript", "Next.js", "Emotion"],
     summary: "3.summary",
     detail: "3.detail",
@@ -58,8 +57,7 @@ export const projectData = [
     type: "Team",
     date: "2022.08 ~ 2024.01",
     imgUrl: ["/images/project/meta_app/meta-app1.png"],
-    deploy: "",
-    github: "",
+    links: [{ deploy: "https://artscloud.net/ko" }],
     stack: [
       "React",
       "TypeScript",
@@ -89,9 +87,12 @@ export const projectData = [
     type: "Team",
     date: "2024.10 ~ 2024.11",
     videoUrl: "https://player.vimeo.com/video/1039902279?autoplay=1",
-    deploy: "",
-    github: "",
     stack: ["Java", "Spring boot", "React", "Styled Components"],
+    links: [
+      {
+        github: "https://github.com/CodeExperts/DonnyMoney",
+      },
+    ],
     summary: "5.summary",
     detail: "5.detail",
     frontendTasks: [
