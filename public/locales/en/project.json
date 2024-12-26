@@ -21,7 +21,7 @@
   "3": {
     "name": "Corporate Admin Site",
     "summary": "A site for managing exhibition spaces, artworks, and user information",
-    "detail": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "detail": "A site for managing exhibition spaces, artworks, and user information.",
     "frontendTasks": [
       "Developed admin UI and maintained existing features",
       "Implemented page layouts and common components",
@@ -40,12 +40,12 @@
     "frontendTasks": [
       "Developed UI components and integrated APIs",
       "Added search functionality and pagination",
-      "Implemented bilingual support (using next-i18next)",
+      "Developed UI panels and controls on WebGL",
       "Created user guide PDF viewer",
       "Enabled corporate newsletter subscriptions",
-      "Developed UI panels and controls on WebGL",
-      "Collaborated with LG 2023 HE DX Tech Fair to create exclusive screens and meet technical requirements",
-      "Project maintenance"
+      "Implemented bilingual support (using next-i18next)",
+      "Project maintenance",
+      "Collaborated with LG 2023 HE DX Tech Fair to create exclusive screens and meet technical requirements"
     ],
     "backendTasks": [
       "Implemented CRUD for posts using Controller and Service",
@@ -53,7 +53,7 @@
     ]
   },
   "5": {
-    "name": "Donimoni",
+    "name": "DonnyMoney",
     "summary": "A financial education platform for teenagers",
     "detail": "A platform designed for both parents and children to promote financial education and healthy economic habits. The project involved end-to-end development, from data processing to UI design, ensuring seamless interaction between frontend and backend.",
     "frontendTasks": [

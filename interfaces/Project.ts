@@ -8,6 +8,7 @@ export interface IProject {
   deploy?: String;
   github?: String;
   stack: String[];
+  links?: any[];
   summary: String;
   detail: String;
   frontendTasks: String[];

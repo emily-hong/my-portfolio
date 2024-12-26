@@ -63,6 +63,8 @@ const Main = () => {
       <FirstPage />
       {/* 두 번째 페이지 */}
       <AboutPage />
+
+      {/* 한영 토글 */}
       {/* 연락처 토글 */}
       <ContactButton />
     </Layout>
