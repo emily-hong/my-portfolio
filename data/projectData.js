@@ -5,7 +5,13 @@ export const projectData = [
     name: "1.name", // 번역 키
     type: "Personal",
     date: "2022.03 - 2022.07",
-    imgUrl: ["/images/project/meta_app/meta-app1.png"],
+    imgUrl: [
+      "/images/project/portfolio/portfolio_1.png",
+      "/images/project/portfolio/portfolio_2.png",
+      "/images/project/portfolio/portfolio_3.png",
+      "/images/project/portfolio/portfolio_4.png",
+      "/images/project/portfolio/portfolio_5.png",
+    ],
     stack: ["React", "TypeScript", "Next.js", "Emotion"],
     links: [
       {
