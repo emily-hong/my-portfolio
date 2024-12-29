@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { IProject } from "../../../../interfaces/Project";
 import { useTranslation } from "react-i18next";
-import Slider from "react-slick";
+import Slider, { Settings } from "react-slick";
 
 interface ProjectDetailModalProps {
   project: IProject;
@@ -16,7 +16,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
     const { className, style, onClick } = props;
     return (
       <div
-        className={"nextArrow"}
+        className="nextArrow"
         style={{
           // ...style,
           display: "block",
@@ -33,7 +33,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
     const { className, style, onClick } = props;
     return (
       <div
-        className={"prevArrow"}
+        className="prevArrow"
         style={{
           // ...style,
           display: "block",
@@ -47,7 +47,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
   };
 
   // react slick setting
-  const settings = {
+  const settings: Settings = {
     fade: true,
     infinite: true,
     speed: 500,
@@ -191,7 +191,6 @@ const ProjectImg = styled.div`
   position: relative;
 
   .slick-slide img {
-    display: block;
     width: 100%;
     height: auto;
     object-fit: cover;
@@ -226,14 +225,13 @@ const ProjectImg = styled.div`
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    z-index: 1000 !important;
+    z-index: 1000;
     display: flex;
     justify-content: center;
   }
   .prevArrow {
     left: 10px;
     top: 45%;
-    padding: 5px;
     padding: 10px 10px 10px 5px;
   }
   .nextArrow {
