@@ -20,11 +20,12 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
         style={{
           // ...style,
           display: "block",
-          right: "10px",
-          backgroundColor: "rgba(255, 255, 255, 0.5)",
+          backgroundColor: "rgba(138, 138, 138, 0.5)",
         }}
         onClick={onClick}
-      />
+      >
+        <img src="/icons/arrow-next.png" alt="next" />
+      </div>
     );
   };
 
@@ -36,11 +37,12 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
         style={{
           // ...style,
           display: "block",
-          left: "10px",
-          backgroundColor: "rgba(255, 255, 255, 0.5)",
+          backgroundColor: "rgba(138, 138, 138, 0.5)",
         }}
         onClick={onClick}
-      />
+      >
+        <img src="/icons/arrow-prev.png" alt="prev" />
+      </div>
     );
   };
 
@@ -183,18 +185,16 @@ const Title = styled.div`
   border-bottom: 2px solid lightgray;
 `;
 const ProjectImg = styled.div`
-  border: 1px solid red;
   aspect-ratio: 16/ 9;
   width: 100%;
   margin: 0 auto 2rem auto;
-  background-color: lightgray;
   position: relative;
 
   .slick-slide img {
     display: block;
-    width: 100%; /* 슬라이드 너비에 맞추기 */
-    height: auto; /* 이미지 비율 유지 */
-    object-fit: cover; /* 필요 시 이 옵션으로 이미지가 슬라이드에 꽉 차도록 설정 */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
   }
 
   .slick-slider {
@@ -227,14 +227,19 @@ const ProjectImg = styled.div`
     height: 50px;
     border-radius: 50%;
     z-index: 1000 !important;
+    display: flex;
+    justify-content: center;
   }
   .prevArrow {
-    left: 0;
+    left: 10px;
     top: 45%;
+    padding: 5px;
+    padding: 10px 10px 10px 5px;
   }
   .nextArrow {
-    right: 0;
+    right: 10px;
     top: 45%;
+    padding: 10px 5px 10px 10px;
   }
 `;
 const DetailSection = styled.div``;

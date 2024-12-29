@@ -13,7 +13,7 @@ export const FirstPage = () => {
           <SubTitle>Hello</SubTitle>
           <Title>I'm Hyeonjeong</Title>
           <SubTitle className="description">
-            Full-Stack Developer with expertise in both frontend and backend
+            Full-Stack Developer with expertise in both Frontend and Backend
             development
           </SubTitle>
         </div>
