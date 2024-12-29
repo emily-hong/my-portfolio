@@ -12,6 +12,38 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
 }) => {
   const { t } = useTranslation("project");
 
+  const CustomNextArrow = (props: any) => {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={"nextArrow"}
+        style={{
+          // ...style,
+          display: "block",
+          right: "10px",
+          backgroundColor: "rgba(255, 255, 255, 0.5)",
+        }}
+        onClick={onClick}
+      />
+    );
+  };
+
+  const CustomPrevArrow = (props: any) => {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={"prevArrow"}
+        style={{
+          // ...style,
+          display: "block",
+          left: "10px",
+          backgroundColor: "rgba(255, 255, 255, 0.5)",
+        }}
+        onClick={onClick}
+      />
+    );
+  };
+
   // react slick setting
   const settings = {
     fade: true,
@@ -20,15 +52,27 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
     slidesToShow: 1,
     slidesToScroll: 1,
     waitForAnimate: false,
+    adaptiveHeight: true, // 높이를 슬라이드 콘텐츠에 맞게 조정
+    nextArrow: <CustomNextArrow />,
+    prevArrow: <CustomPrevArrow />,
   };
 
   return (
     <ModalSection>
       <Title>{t(`${project.name}`)}</Title>
       {/* image */}
+
       {project.imgUrl && (
         <ProjectImg>
-          <img src={`${project.imgUrl[0]}`} alt="project" />
+          {project.imgUrl.length > 1 ? (
+            <Slider {...settings}>
+              {project.imgUrl.map((img, index) => (
+                <img src={`${img}`} alt="project" key={index} />
+              ))}
+            </Slider>
+          ) : (
+            <img src={`${project.imgUrl[0]}`} alt="project" />
+          )}
         </ProjectImg>
       )}
 
@@ -139,13 +183,58 @@ const Title = styled.div`
   border-bottom: 2px solid lightgray;
 `;
 const ProjectImg = styled.div`
-  width: 100%;
+  border: 1px solid red;
   aspect-ratio: 16/ 9;
+  width: 100%;
   margin: 0 auto 2rem auto;
   background-color: lightgray;
+  position: relative;
+
+  .slick-slide img {
+    display: block;
+    width: 100%; /* 슬라이드 너비에 맞추기 */
+    height: auto; /* 이미지 비율 유지 */
+    object-fit: cover; /* 필요 시 이 옵션으로 이미지가 슬라이드에 꽉 차도록 설정 */
+  }
+
+  .slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+  }
+  .slick-list {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  .slick-current {
+    z-index: 1;
+  }
+  .slick-track {
+    display: flex;
+    align-items: center;
+  }
 
   img {
     width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .nextArrow,
+  .prevArrow {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 1000 !important;
+  }
+  .prevArrow {
+    left: 0;
+    top: 45%;
+  }
+  .nextArrow {
+    right: 0;
+    top: 45%;
   }
 `;
 const DetailSection = styled.div``;
