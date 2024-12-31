@@ -84,6 +84,7 @@ export const projectData = [
       "/images/project/meta_app/space_4.png",
       "/images/project/meta_app/space_5.png",
       "/images/project/meta_app/space_6.png",
+      "/images/project/meta_app/space_7.png",
     ],
     links: [{ deploy: "https://artscloud.net/ko" }],
     stack: [
