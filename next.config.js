@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  experimental: {
+  compiler: {
     styledComponents: true, // styled-components 지원 활성화
   },
   i18n: {

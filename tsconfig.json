@@ -7,7 +7,7 @@
       "esnext"
     ],
     "allowJs": true,
-    "skipLibCheck": true,
+    "skipLibCheck": true, // 라이브러리 타입 정의 검사 건너뜀
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -15,18 +15,13 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "preserve", // Next.js에서 자체적으로 처리
     "paths": {
       "@/*": [
         "./src/*"
       ]
     },
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ]
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",

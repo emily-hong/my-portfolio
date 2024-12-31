@@ -2,62 +2,20 @@ import React from "react";
 import styled from "styled-components";
 import { IProject } from "../../../../interfaces/Project";
 import { useTranslation } from "react-i18next";
-import Slider, { Settings } from "react-slick";
+// import Slider from "react-slick";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+
+import "swiper/css";
 
 interface ProjectDetailModalProps {
   project: IProject;
 }
+
 export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
   project,
 }) => {
   const { t } = useTranslation("project");
-
-  const CustomNextArrow = (props: any) => {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className="nextArrow"
-        style={{
-          // ...style,
-          display: "block",
-          backgroundColor: "rgba(138, 138, 138, 0.5)",
-        }}
-        onClick={onClick}
-      >
-        <img src="/icons/arrow-next.png" alt="next" />
-      </div>
-    );
-  };
-
-  const CustomPrevArrow = (props: any) => {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className="prevArrow"
-        style={{
-          // ...style,
-          display: "block",
-          backgroundColor: "rgba(138, 138, 138, 0.5)",
-        }}
-        onClick={onClick}
-      >
-        <img src="/icons/arrow-prev.png" alt="prev" />
-      </div>
-    );
-  };
-
-  // react slick setting
-  const settings: Settings = {
-    fade: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    waitForAnimate: false,
-    adaptiveHeight: true, // 높이를 슬라이드 콘텐츠에 맞게 조정
-    nextArrow: <CustomNextArrow />,
-    prevArrow: <CustomPrevArrow />,
-  };
 
   return (
     <ModalSection>
@@ -67,11 +25,28 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
       {project.imgUrl && (
         <ProjectImg>
           {project.imgUrl.length > 1 ? (
-            <Slider {...settings}>
-              {project.imgUrl.map((img, index) => (
-                <img src={`${img}`} alt="project" key={index} />
-              ))}
-            </Slider>
+            <>
+              <Swiper
+                spaceBetween={50}
+                slidesPerView={1}
+                navigation={{
+                  nextEl: ".custom-next-btn",
+                  prevEl: ".custom-prev-btn",
+                }}
+                modules={[Navigation, Pagination]}
+                pagination={{ clickable: true }}
+                loop
+              >
+                {project.imgUrl.map((img, index) => (
+                  <SwiperSlide key={index}>
+                    <img src={`${img}`} alt={`slide-${index}`} />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+              {/* Custom navigation buttons */}
+              <CustomPrevArrow className="custom-prev-btn" />
+              <CustomNextArrow className="custom-next-btn" />
+            </>
           ) : (
             <img src={`${project.imgUrl[0]}`} alt="project" />
           )}
@@ -165,6 +140,60 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
   );
 };
 
+// Custom buttons
+const CustomNextArrow: React.FC<{
+  className?: string;
+  onClick?: () => void;
+}> = ({ className, onClick }) => (
+  <div
+    className={`custom-next-btn ${className}`}
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: "rgba(138, 138, 138, 0.5)",
+      borderRadius: "50%",
+      width: "40px",
+      height: "40px",
+      zIndex: 1000,
+      position: "absolute",
+      top: "50%",
+      right: "10px",
+      transform: "translateY(-50%)",
+      cursor: "pointer",
+    }}
+    onClick={onClick}
+  >
+    <img src="/icons/arrow-next.png" alt="next" style={{ width: "50%" }} />
+  </div>
+);
+const CustomPrevArrow: React.FC<{
+  className?: string;
+  onClick?: () => void;
+}> = ({ className, onClick }) => (
+  <div
+    className={`custom-prev-btn ${className}`}
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: "rgba(138, 138, 138, 0.5)",
+      borderRadius: "50%",
+      width: "40px",
+      height: "40px",
+      zIndex: 1000,
+      position: "absolute",
+      top: "50%",
+      left: "10px",
+      transform: "translateY(-50%)",
+      cursor: "pointer",
+    }}
+    onClick={onClick}
+  >
+    <img src="/icons/arrow-prev.png" alt="prev" style={{ width: "50%" }} />
+  </div>
+);
+
 // 상세모달
 const ModalSection = styled.div`
   min-width: 10vw;
@@ -189,7 +218,7 @@ const ProjectImg = styled.div`
   width: 100%;
   margin: 0 auto 2rem auto;
   position: relative;
-
+  /* 
   .slick-slide img {
     width: 100%;
     height: auto;
@@ -238,6 +267,50 @@ const ProjectImg = styled.div`
     right: 10px;
     top: 45%;
     padding: 10px 5px 10px 10px;
+  } */
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: rgba(138, 138, 138, 0.8);
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid red;
+  }
+
+  .swiper-button-next img,
+  .swiper-button-prev img {
+    width: 50%;
+    height: auto;
+  }
+
+  .swiper-pagination-bullet {
+    background: rgba(138, 138, 138, 0.8);
+  }
+
+  .swiper-pagination-bullet-active {
+    background: rgba(0, 0, 0, 0.9);
   }
 `;
 const DetailSection = styled.div``;
