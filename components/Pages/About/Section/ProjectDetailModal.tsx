@@ -16,7 +16,6 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
   project,
 }) => {
   const { t } = useTranslation("project");
-
   return (
     <ModalSection>
       <Title>{t(`${project.name}`)}</Title>
