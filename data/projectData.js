@@ -116,7 +116,15 @@ export const projectData = [
     type: "Team",
     date: "2024.10 ~ 2024.11",
     videoUrl: "https://player.vimeo.com/video/1039902279?autoplay=1",
-    stack: ["Java", "Spring boot", "React", "Styled Components"],
+    stack: [
+      "React",
+      "Styled Components",
+      "Axios",
+      "Java",
+      "Spring boot",
+      "MySQL",
+      "JPA",
+    ],
     links: [
       {
         github: "https://github.com/CodeExperts/DonnyMoney",
