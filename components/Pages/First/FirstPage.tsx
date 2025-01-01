@@ -10,18 +10,24 @@ export const FirstPage = () => {
     <Outer>
       <LeftSection>
         <div>
-          <SubTitle>Hello</SubTitle>
+          <SubTitle>안녕하세요. 저는 웹 개발자</SubTitle>
+          <Title>홍현정 입니다.</Title>
+          <SubTitle className="description">
+            프론트엔드와 백엔드의 경계를 넘나들며, 사용성과 안정성을 모두 갖춘
+            서비스를 구축하는 풀스택 개발자로 성장하고 있습니다.
+          </SubTitle>
+          {/* <SubTitle>Hello</SubTitle>
           <Title>I'm Hyeonjeong</Title>
           <SubTitle className="description">
             Full-Stack Developer with expertise in both Frontend and Backend
             development
-          </SubTitle>
+          </SubTitle> */}
         </div>
       </LeftSection>
 
       <RightSection>
         <ImgContainer>
-          <img src="/images/profile-img.png" alt="profile" />
+          {/* <img src="/images/profile-img.png" alt="profile" /> */}
         </ImgContainer>
       </RightSection>
 
@@ -49,11 +55,13 @@ const Outer = styled.div`
 `;
 
 const LeftSection = styled.div`
-  width: 50%;
+  /* width: 50%; */ //오른쪽 프로필 사진 있을때
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: end;
   align-items: center;
+  /* border: 1px solid red; */
 
   & > div {
     width: 80%;
@@ -67,7 +75,8 @@ const Title = styled.div`
   font-weight: bold;
 `;
 const SubTitle = styled.div`
-  font-size: 4rem;
+  /* font-size: 4rem; */ //오른쪽 프로필 사진 있을때
+  font-size: 3rem;
 
   &.description {
     font-size: 2rem;
