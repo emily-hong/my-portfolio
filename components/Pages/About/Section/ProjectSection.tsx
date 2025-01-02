@@ -110,7 +110,8 @@ const FilterButton = styled.div`
   font-size: 1.3rem;
 
   &.active {
-    background-color: #ddddbe;
+    /* background-color: #ddddbe; */
+    background-color: #f5f5f5;
     color: #333;
   }
 

@@ -44,7 +44,7 @@ const CareerSection = () => {
 };
 
 const Outer = styled.div`
-  /* padding-top: 2rem;E */
+  /* padding-top: 2rem; */
   padding-left: 2rem;
   color: #f8f1e5;
   display: flex;

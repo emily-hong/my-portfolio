@@ -48,11 +48,15 @@ const Outer = styled.div`
 
 const Section = styled.div`
   width: 90%;
-  /* color: #cccccc; */
-  color: #f8f1e5;
-  line-height: 1.3;
+  /* color: #eaeaea; */
+  color: #212529;
+  line-height: 1.5;
   padding: 1rem;
-  background-color: #424242;
+  /* background-color: #3a3a3a; */
+  /* background-color: #eaeaea; */
+  /* background-color: #f5f5f5; */
+  background-color: #ffffff;
+
   border-radius: 1rem;
 
   .focus {
