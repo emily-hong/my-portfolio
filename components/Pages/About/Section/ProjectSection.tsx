@@ -110,7 +110,6 @@ const FilterButton = styled.div`
   font-size: 1.3rem;
 
   &.active {
-    /* background-color: #ddddbe; */
     background-color: #f5f5f5;
     color: #333;
   }
@@ -164,7 +163,6 @@ const Card = styled.div`
   }
   .project-stack {
     display: flex;
-    /* justify-content: center; */
     gap: 0.8rem;
     flex-wrap: wrap;
     font-size: 1rem;

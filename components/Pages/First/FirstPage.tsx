@@ -52,6 +52,10 @@ const Outer = styled.div`
   background-color: #f4f4f4;
   font-size: 2rem;
   color: #333;
+
+  @media (min-width: 768px) {
+    /* 태블릿 이상 */
+  }
 `;
 
 const LeftSection = styled.div`
