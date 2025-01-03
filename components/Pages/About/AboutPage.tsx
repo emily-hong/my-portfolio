@@ -4,13 +4,6 @@ import Content from "./Content";
 import Sidebar from "./Sidebar";
 import dynamic from "next/dynamic";
 import { AboutSection } from "./Section/AboutSection";
-// import { ProjectSection } from "./Section/ProjectSection";
-// import { EduSection } from "./Section/EduSection";
-// import CareerSection from "./Section/CareerSection";
-
-/*
-  About, Career, Project, Education
-*/
 
 // 각 섹션의 데이터를 정의하는 인터페이스
 interface SectionData {
@@ -77,8 +70,6 @@ const Outer = styled.div`
   display: flex;
   margin-top: 100vh; /* 첫 번째 페이지 아래에서 시작 */
   min-height: 100vh; // 두 번째 페이지 최소 높이를 설정
-  /* background-color: #1c1c1c; */
-  /* background-color: #2e2e2e; */
   background-color: #191919;
 `;
 

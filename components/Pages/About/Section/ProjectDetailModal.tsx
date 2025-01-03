@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { IProject } from "../../../../interfaces/Project";
 import { useTranslation } from "react-i18next";
-// import Slider from "react-slick";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 
@@ -217,56 +216,7 @@ const ProjectImg = styled.div`
   width: 100%;
   margin: 0 auto 2rem auto;
   position: relative;
-  /* 
-  .slick-slide img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
 
-  .slick-slider {
-    position: relative;
-    display: block;
-    box-sizing: border-box;
-  }
-  .slick-list {
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-  }
-  .slick-current {
-    z-index: 1;
-  }
-  .slick-track {
-    display: flex;
-    align-items: center;
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-  .nextArrow,
-  .prevArrow {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-  }
-  .prevArrow {
-    left: 10px;
-    top: 45%;
-    padding: 10px 10px 10px 5px;
-  }
-  .nextArrow {
-    right: 10px;
-    top: 45%;
-    padding: 10px 5px 10px 10px;
-  } */
   .swiper {
     width: 100%;
     height: 100%;

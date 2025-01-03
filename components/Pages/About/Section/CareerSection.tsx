@@ -44,7 +44,6 @@ const CareerSection = () => {
 };
 
 const Outer = styled.div`
-  /* padding-top: 2rem; */
   padding-left: 2rem;
   color: #f8f1e5;
   display: flex;
@@ -62,7 +61,6 @@ const Logo = styled.div`
   width: 30%;
 
   img {
-    /* width: 100%; */
     height: 100%;
   }
 `;
