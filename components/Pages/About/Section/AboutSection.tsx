@@ -37,6 +37,15 @@ export const AboutSection = () => {
   );
 };
 
+// const Outer = styled.div`
+//   height: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 10%;
+//   justify-content: center;
+//   border: 1px solid red;
+// `;
+
 const Outer = styled.div`
   height: 100%;
   display: flex;
@@ -48,10 +57,11 @@ const Outer = styled.div`
 
 const Section = styled.div`
   width: 90%;
-  color: #212529;
+  /* color: #212529; */
+  color: #ffffff;
   line-height: 1.5;
   padding: 1rem;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
 
   border-radius: 1rem;
 
@@ -60,11 +70,11 @@ const Section = styled.div`
   }
 `;
 const Title = styled.div`
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 1rem;
 `;
 
 const Description = styled.div`
-  font-size: 1rem;
+  font-size: 1.1rem;
 `;
