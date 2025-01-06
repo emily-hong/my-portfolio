@@ -106,7 +106,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
         </Subject>
 
         <Subject>
-          <SubTitle>주요 작업</SubTitle>
+          <SubTitle>작업 기여</SubTitle>
           <Description>
             {project.frontendTasks && (
               <>

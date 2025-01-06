@@ -13,8 +13,9 @@ export const FirstPage = () => {
           <SubTitle>안녕하세요. 저는 웹 개발자</SubTitle>
           <Title>홍현정 입니다.</Title>
           <SubTitle className="description">
-            프론트엔드와 백엔드의 경계를 넘나들며, 사용성과 안정성을 모두 갖춘
-            서비스를 구축하는 풀스택 개발자로 성장하고 있습니다.
+            {/* 프론트엔드와 백엔드의 경계를 넘나들며,  */}
+            사용성과 안정성을 모두 갖춘 서비스를 구축하는 개발자로 성장하고
+            싶습니다.
           </SubTitle>
           {/* <SubTitle>Hello</SubTitle>
           <Title>I'm Hyeonjeong</Title>
