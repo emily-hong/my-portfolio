@@ -54,8 +54,9 @@ const Outer = styled.div`
   font-size: 2rem;
   color: #333;
 
-  @media (min-width: 768px) {
-    /* 태블릿 이상 */
+  @media (max-width: 1499px) {
+  }
+  @media (max-width: 768px) {
   }
 `;
 
