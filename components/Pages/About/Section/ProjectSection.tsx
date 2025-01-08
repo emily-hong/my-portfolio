@@ -93,6 +93,12 @@ const ProjectSection = () => {
 
 const Outer = styled.div`
   position: relative;
+
+  @media (max-width: 1499px) {
+  }
+  @media (max-width: 768px) {
+    /* 태블릿 이상 */
+  }
 `;
 
 const FilterButtons = styled.div`
@@ -172,7 +178,7 @@ const Card = styled.div`
     padding: 0.2rem 0.6rem;
     background-color: #9a9a9a;
     color: black;
-    border-radius: 1rem;
+    border-radius: 20px;
   }
 
   &.modal-active {
