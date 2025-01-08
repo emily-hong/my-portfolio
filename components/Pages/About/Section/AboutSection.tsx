@@ -70,11 +70,11 @@ const Section = styled.div`
   }
 `;
 const Title = styled.div`
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 1rem;
 `;
 
 const Description = styled.div`
-  font-size: 1.1rem;
+  font-size: 1rem;
 `;
